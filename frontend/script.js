@@ -162,11 +162,20 @@ signupForm.addEventListener("submit", async function (event) {
                 `${email} has already claimed this offer.`;
 
 
+            // IMPORTANT:
+            // Do not display "FREE SIDE" here because
+            // the customer is NOT receiving another offer.
+            couponTitle.textContent =
+                "NO NEW COUPON ISSUED";
+
+
             couponDescription.textContent =
-                "No new coupon was issued.";
+                "You have already claimed this offer.";
+
 
             couponCodeMessage.textContent =
                 "Check your email for the coupon you previously received.";
+
 
             successSection.classList.remove("hidden");
         }
@@ -206,7 +215,7 @@ signupForm.addEventListener("submit", async function (event) {
 
 
         couponTitle.textContent =
-            "FREE SIDE";
+            "OFFER NOT CONFIRMED";
 
 
         couponDescription.textContent =
