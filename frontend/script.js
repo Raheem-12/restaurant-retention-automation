@@ -1,26 +1,37 @@
 // Find the signup form in our HTML.
 const signupForm = document.getElementById("signup-form");
 
-// Find the hidden success section.
+// Find the hidden result section.
 const successSection = document.getElementById("success-section");
 
-// Find the paragraph where we display feedback.
+// Find the heading and message inside the result section.
+const successTitle = document.getElementById("success-title");
 const successMessage = document.getElementById("success-message");
 
 
+/*
+    Listen for the customer submitting the signup form.
+*/
 signupForm.addEventListener("submit", async function (event) {
 
-    // Prevent normal form refresh.
+    // Prevent the webpage from refreshing.
     event.preventDefault();
 
-    // Get customer input.
+
+    /*
+        Get the information entered by the customer.
+    */
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const marketingConsent =
         document.getElementById("marketing-consent").checked;
 
-    // Build customer object.
+
+    /*
+        Put the customer's information into one object.
+        This object will be sent to n8n.
+    */
     const customer = {
         name: name,
         email: email,
@@ -28,9 +39,16 @@ signupForm.addEventListener("submit", async function (event) {
         marketingConsent: marketingConsent
     };
 
+
     try {
 
-        // Send customer information to the production n8n webhook.
+        /*
+            Send the customer information to our
+            production n8n webhook.
+
+            "await" means JavaScript waits for n8n
+            to respond before continuing.
+        */
         const response = await fetch(
             "https://n8n-production-c7a7.up.railway.app/webhook/restaurant-signup",
             {
@@ -44,42 +62,85 @@ signupForm.addEventListener("submit", async function (event) {
             }
         );
 
-        // Make sure the HTTP request itself succeeded.
+
+        /*
+            If n8n returns an HTTP error,
+            stop and move to the catch block.
+        */
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status}`);
         }
 
-        // Read the JSON returned by n8n.
+
+        /*
+            Convert the JSON response from n8n
+            into a JavaScript object.
+
+            Expected responses:
+
+            { "status": "success" }
+
+            OR
+
+            { "status": "duplicate" }
+        */
         const result = await response.json();
 
         console.log("n8n response:", result);
 
 
-        // NEW CUSTOMER
+        /*
+            NEW CUSTOMER
+
+            n8n successfully:
+            - generated the coupon
+            - added the customer to Google Sheets
+            - sent the email
+        */
         if (result.status === "success") {
 
+            // Hide the signup form.
             signupForm.classList.add("hidden");
 
+            // Show the success heading.
+            successTitle.textContent = "You're in! 🎉";
+
+            // Show the personalized success message.
             successMessage.textContent =
                 `Thanks, ${name}! Your VIP offer is ready. Check your email for your unique offer code.`;
 
+            // Reveal the result section.
             successSection.classList.remove("hidden");
         }
 
 
-        // EXISTING CUSTOMER
+        /*
+            DUPLICATE CUSTOMER
+
+            The email already exists in Google Sheets,
+            so no second coupon should be created.
+        */
         else if (result.status === "duplicate") {
 
+            // Hide the signup form.
             signupForm.classList.add("hidden");
 
+            // Change the heading for duplicate customers.
+            successTitle.textContent = "Offer Already Claimed";
+
+            // Explain what happened.
             successMessage.textContent =
                 `It looks like ${email} has already claimed this offer. Check your email for your existing coupon.`;
 
+            // Reveal the result section.
             successSection.classList.remove("hidden");
         }
 
 
-        // Unexpected n8n response
+        /*
+            n8n responded, but with something
+            our frontend wasn't expecting.
+        */
         else {
             throw new Error("Unexpected response from signup system.");
         }
@@ -88,7 +149,14 @@ signupForm.addEventListener("submit", async function (event) {
 
         console.error("Signup error:", error);
 
-        // Keep the form visible so the customer can try again.
+        /*
+            Something failed.
+
+            We keep the form visible so the customer
+            can try submitting again.
+        */
+        successTitle.textContent = "Something Went Wrong";
+
         successMessage.textContent =
             "We couldn't process your signup right now. Please try again.";
 
