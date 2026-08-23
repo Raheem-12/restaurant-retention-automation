@@ -148,7 +148,7 @@ signupForm.addEventListener("submit", async function (event) {
                 "Offer Already Claimed";
 
             successMessage.textContent =
-                `${email} has already claimed this offer.`;
+                "This email address or phone number has already been used to claim this offer.";
 
             couponTitle.textContent =
                 "NO NEW COUPON ISSUED";
