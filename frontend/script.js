@@ -1,52 +1,26 @@
 // Find the signup form in our HTML.
 const signupForm = document.getElementById("signup-form");
 
-
 // Find the hidden success section.
 const successSection = document.getElementById("success-section");
 
-
-// Find the paragraph where we will display
-// a personalized success message.
+// Find the paragraph where we display feedback.
 const successMessage = document.getElementById("success-message");
 
 
+signupForm.addEventListener("submit", async function (event) {
 
-/*
-    Listen for the customer submitting the form.
-*/
-signupForm.addEventListener("submit", function (event) {
-
-    /*
-        Normally, submitting an HTML form refreshes
-        the webpage.
-
-        We prevent that because we want JavaScript
-        to control what happens next.
-    */
+    // Prevent normal form refresh.
     event.preventDefault();
 
-
-    /*
-        Get the values the customer entered.
-    */
+    // Get customer input.
     const name = document.getElementById("name").value.trim();
-
     const email = document.getElementById("email").value.trim();
-
     const phone = document.getElementById("phone").value.trim();
-
     const marketingConsent =
         document.getElementById("marketing-consent").checked;
 
-
-    /*
-        Put the customer's information into
-        one JavaScript object.
-
-        Later, we will send this object to our
-        backend / automation system.
-    */
+    // Build customer object.
     const customer = {
         name: name,
         email: email,
@@ -54,52 +28,71 @@ signupForm.addEventListener("submit", function (event) {
         marketingConsent: marketingConsent
     };
 
-        fetch("https://n8n-production-c7a7.up.railway.app/webhook/restaurant-signup", {
-    method: "POST",
+    try {
 
-    headers: {
-        "Content-Type": "application/json"
-    },
+        // Send customer information to the production n8n webhook.
+        const response = await fetch(
+            "https://n8n-production-c7a7.up.railway.app/webhook/restaurant-signup",
+            {
+                method: "POST",
 
-    body: JSON.stringify(customer)
-    })
-    .then(response => {
-        console.log("Customer successfully sent to n8n");
-    })
-    .catch(error => {
-        console.error("Error sending customer to n8n:", error);
-    });
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
+                body: JSON.stringify(customer)
+            }
+        );
 
-    /*
-        For now, print the customer object
-        to the browser developer console.
+        // Make sure the HTTP request itself succeeded.
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
 
-        This is ONLY for development/testing.
+        // Read the JSON returned by n8n.
+        const result = await response.json();
 
-        We will remove this when real customer
-        information is being handled.
-    */
-    console.log("Demo customer submitted:", customer);
+        console.log("n8n response:", result);
 
 
-    /*
-        Hide the signup form after submission.
-    */
-    signupForm.classList.add("hidden");
+        // NEW CUSTOMER
+        if (result.status === "success") {
+
+            signupForm.classList.add("hidden");
+
+            successMessage.textContent =
+                `Thanks, ${name}! Your VIP offer is ready. Check your email for your unique offer code.`;
+
+            successSection.classList.remove("hidden");
+        }
 
 
-    /*
-        Create a personalized message.
-    */
-    successMessage.textContent =
-        `Thanks, ${name}! Your VIP offer is ready.`;
+        // EXISTING CUSTOMER
+        else if (result.status === "duplicate") {
+
+            signupForm.classList.add("hidden");
+
+            successMessage.textContent =
+                `It looks like ${email} has already claimed this offer. Check your email for your existing coupon.`;
+
+            successSection.classList.remove("hidden");
+        }
 
 
-    /*
-        Remove the "hidden" class from the
-        success section so the coupon appears.
-    */
-    successSection.classList.remove("hidden");
+        // Unexpected n8n response
+        else {
+            throw new Error("Unexpected response from signup system.");
+        }
+
+    } catch (error) {
+
+        console.error("Signup error:", error);
+
+        // Keep the form visible so the customer can try again.
+        successMessage.textContent =
+            "We couldn't process your signup right now. Please try again.";
+
+        successSection.classList.remove("hidden");
+    }
 
 });
