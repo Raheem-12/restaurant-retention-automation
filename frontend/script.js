@@ -1,10 +1,12 @@
 // Find the signup form.
 const signupForm = document.getElementById("signup-form");
 
+// Find the submit button.
+const submitButton =
+    signupForm.querySelector('button[type="submit"]');
 
 // Find the result section.
 const successSection = document.getElementById("success-section");
-
 
 // Find the elements whose text will change
 // depending on the response from n8n.
@@ -17,7 +19,6 @@ const couponCodeMessage =
     document.getElementById("coupon-code-message");
 
 
-
 /*
     Listen for the customer submitting the form.
 */
@@ -25,6 +26,15 @@ signupForm.addEventListener("submit", async function (event) {
 
     // Prevent the webpage from refreshing.
     event.preventDefault();
+
+
+    /*
+        Prevent the customer from submitting
+        the form multiple times while n8n
+        is processing the request.
+    */
+    submitButton.disabled = true;
+    submitButton.textContent = "Processing...";
 
 
     /*
@@ -99,37 +109,26 @@ signupForm.addEventListener("submit", async function (event) {
             --------------------------------
             NEW CUSTOMER
             --------------------------------
-
-            n8n created the customer,
-            generated a coupon,
-            stored it in Google Sheets,
-            and sent the email.
         */
         if (result.status === "success") {
 
             signupForm.classList.add("hidden");
 
-
             successTitle.textContent =
                 "You're in! 🎉";
-
 
             successMessage.textContent =
                 `Thanks, ${name}! Your VIP offer is ready. ` +
                 `Check your email for your unique offer code.`;
 
-
             couponTitle.textContent =
                 "FREE SIDE";
-
 
             couponDescription.textContent =
                 "Show this offer to your server on your next visit.";
 
-
             couponCodeMessage.textContent =
                 "Check your email for your unique offer code.";
-
 
             successSection.classList.remove("hidden");
         }
@@ -140,42 +139,25 @@ signupForm.addEventListener("submit", async function (event) {
             --------------------------------
             EXISTING CUSTOMER
             --------------------------------
-
-            The email already exists in the
-            Google Sheet.
-
-            Therefore:
-            - no new row
-            - no new coupon
-            - no new email
         */
         else if (result.status === "duplicate") {
 
             signupForm.classList.add("hidden");
 
-
             successTitle.textContent =
                 "Offer Already Claimed";
-
 
             successMessage.textContent =
                 `${email} has already claimed this offer.`;
 
-
-            // IMPORTANT:
-            // Do not display "FREE SIDE" here because
-            // the customer is NOT receiving another offer.
             couponTitle.textContent =
                 "NO NEW COUPON ISSUED";
-
 
             couponDescription.textContent =
                 "You have already claimed this offer.";
 
-
             couponCodeMessage.textContent =
                 "Check your email for the coupon you previously received.";
-
 
             successSection.classList.remove("hidden");
         }
@@ -183,8 +165,7 @@ signupForm.addEventListener("submit", async function (event) {
 
 
         /*
-            n8n responded, but not with one of
-            the statuses our website expects.
+            Unexpected response from n8n.
         */
         else {
 
@@ -203,28 +184,27 @@ signupForm.addEventListener("submit", async function (event) {
         /*
             ERROR STATE
 
-            Keep the form visible so the
-            customer can try again.
+            Re-enable the button because the
+            customer should be allowed to retry.
         */
+        submitButton.disabled = false;
+        submitButton.textContent = "Claim My Free Side";
+
+
         successTitle.textContent =
             "Something Went Wrong";
-
 
         successMessage.textContent =
             "We couldn't process your signup right now. Please try again.";
 
-
         couponTitle.textContent =
             "OFFER NOT CONFIRMED";
-
 
         couponDescription.textContent =
             "Your offer has not been confirmed.";
 
-
         couponCodeMessage.textContent =
             "Please try submitting the form again.";
-
 
         successSection.classList.remove("hidden");
     }
