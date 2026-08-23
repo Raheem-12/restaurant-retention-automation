@@ -1,16 +1,25 @@
-// Find the signup form in our HTML.
+// Find the signup form.
 const signupForm = document.getElementById("signup-form");
 
-// Find the hidden result section.
+
+// Find the result section.
 const successSection = document.getElementById("success-section");
 
-// Find the heading and message inside the result section.
+
+// Find the elements whose text will change
+// depending on the response from n8n.
 const successTitle = document.getElementById("success-title");
 const successMessage = document.getElementById("success-message");
 
+const couponTitle = document.getElementById("coupon-title");
+const couponDescription = document.getElementById("coupon-description");
+const couponCodeMessage =
+    document.getElementById("coupon-code-message");
+
+
 
 /*
-    Listen for the customer submitting the signup form.
+    Listen for the customer submitting the form.
 */
 signupForm.addEventListener("submit", async function (event) {
 
@@ -19,18 +28,24 @@ signupForm.addEventListener("submit", async function (event) {
 
 
     /*
-        Get the information entered by the customer.
+        Get the customer's information.
     */
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
+    const name =
+        document.getElementById("name").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
     const marketingConsent =
         document.getElementById("marketing-consent").checked;
 
 
     /*
-        Put the customer's information into one object.
-        This object will be sent to n8n.
+        Build the customer object that will
+        be sent to n8n.
     */
     const customer = {
         name: name,
@@ -43,11 +58,8 @@ signupForm.addEventListener("submit", async function (event) {
     try {
 
         /*
-            Send the customer information to our
-            production n8n webhook.
-
-            "await" means JavaScript waits for n8n
-            to respond before continuing.
+            Send the signup information to
+            the production n8n webhook.
         */
         const response = await fetch(
             "https://n8n-production-c7a7.up.railway.app/webhook/restaurant-signup",
@@ -64,101 +76,146 @@ signupForm.addEventListener("submit", async function (event) {
 
 
         /*
-            If n8n returns an HTTP error,
-            stop and move to the catch block.
+            Make sure the HTTP request succeeded.
         */
         if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
+            throw new Error(
+                `HTTP error: ${response.status}`
+            );
         }
 
 
         /*
-            Convert the JSON response from n8n
-            into a JavaScript object.
-
-            Expected responses:
-
-            { "status": "success" }
-
-            OR
-
-            { "status": "duplicate" }
+            Read the JSON response returned
+            by the n8n workflow.
         */
         const result = await response.json();
 
         console.log("n8n response:", result);
 
 
-        /*
-            NEW CUSTOMER
 
-            n8n successfully:
-            - generated the coupon
-            - added the customer to Google Sheets
-            - sent the email
+        /*
+            --------------------------------
+            NEW CUSTOMER
+            --------------------------------
+
+            n8n created the customer,
+            generated a coupon,
+            stored it in Google Sheets,
+            and sent the email.
         */
         if (result.status === "success") {
 
-            // Hide the signup form.
             signupForm.classList.add("hidden");
 
-            // Show the success heading.
-            successTitle.textContent = "You're in! 🎉";
 
-            // Show the personalized success message.
+            successTitle.textContent =
+                "You're in! 🎉";
+
+
             successMessage.textContent =
-                `Thanks, ${name}! Your VIP offer is ready. Check your email for your unique offer code.`;
+                `Thanks, ${name}! Your VIP offer is ready. ` +
+                `Check your email for your unique offer code.`;
 
-            // Reveal the result section.
+
+            couponTitle.textContent =
+                "FREE SIDE";
+
+
+            couponDescription.textContent =
+                "Show this offer to your server on your next visit.";
+
+
+            couponCodeMessage.textContent =
+                "Check your email for your unique offer code.";
+
+
             successSection.classList.remove("hidden");
         }
 
 
-        /*
-            DUPLICATE CUSTOMER
 
-            The email already exists in Google Sheets,
-            so no second coupon should be created.
+        /*
+            --------------------------------
+            EXISTING CUSTOMER
+            --------------------------------
+
+            The email already exists in the
+            Google Sheet.
+
+            Therefore:
+            - no new row
+            - no new coupon
+            - no new email
         */
         else if (result.status === "duplicate") {
 
-            // Hide the signup form.
             signupForm.classList.add("hidden");
 
-            // Change the heading for duplicate customers.
-            successTitle.textContent = "Offer Already Claimed";
 
-            // Explain what happened.
+            successTitle.textContent =
+                "Offer Already Claimed";
+
+
             successMessage.textContent =
-                `It looks like ${email} has already claimed this offer. Check your email for your existing coupon.`;
+                `${email} has already claimed this offer.`;
 
-            // Reveal the result section.
+
+            couponDescription.textContent =
+                "No new coupon was issued.";
+
+            couponCodeMessage.textContent =
+                "Check your email for the coupon you previously received.";
+
             successSection.classList.remove("hidden");
         }
 
 
+
         /*
-            n8n responded, but with something
-            our frontend wasn't expecting.
+            n8n responded, but not with one of
+            the statuses our website expects.
         */
         else {
-            throw new Error("Unexpected response from signup system.");
+
+            throw new Error(
+                "Unexpected response from signup system."
+            );
+
         }
+
 
     } catch (error) {
 
         console.error("Signup error:", error);
 
-        /*
-            Something failed.
 
-            We keep the form visible so the customer
-            can try submitting again.
+        /*
+            ERROR STATE
+
+            Keep the form visible so the
+            customer can try again.
         */
-        successTitle.textContent = "Something Went Wrong";
+        successTitle.textContent =
+            "Something Went Wrong";
+
 
         successMessage.textContent =
             "We couldn't process your signup right now. Please try again.";
+
+
+        couponTitle.textContent =
+            "FREE SIDE";
+
+
+        couponDescription.textContent =
+            "Your offer has not been confirmed.";
+
+
+        couponCodeMessage.textContent =
+            "Please try submitting the form again.";
+
 
         successSection.classList.remove("hidden");
     }
