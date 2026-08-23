@@ -1,81 +1,160 @@
-/* Remove the browser's default spacing */
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
 * {
     box-sizing: border-box;
 }
 
 
-/* Entire webpage */
+/* =========================================
+   PAGE
+========================================= */
+
 body {
     margin: 0;
-
     min-height: 100vh;
 
     font-family: Arial, Helvetica, sans-serif;
 
-    background-color: #f3f0eb;
+    background:
+        linear-gradient(
+            180deg,
+            #1c1c1c 0px,
+            #1c1c1c 180px,
+            #f4efe7 180px,
+            #f4efe7 100%
+        );
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
-    padding: 30px 15px;
+    padding: 45px 16px;
 }
 
 
-/* Main restaurant offer card */
+/* =========================================
+   MAIN OFFER CARD
+========================================= */
+
 .offer-card {
     width: 100%;
-    max-width: 480px;
+    max-width: 500px;
 
-    background-color: white;
+    background-color: #ffffff;
 
-    padding: 40px;
+    border-radius: 22px;
 
-    border-radius: 16px;
+    overflow: hidden;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 0 36px 36px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25);
 
     text-align: center;
+
+    border-top: 8px solid #f4c300;
 }
 
 
-/* Restaurant name */
+/* =========================================
+   RESTAURANT BRANDING
+========================================= */
+
 .restaurant-name {
-    font-size: 24px;
-    font-weight: bold;
+    margin: 0 -36px;
+
+    padding: 30px 20px 8px;
+
+    background-color: #161616;
+
+    color: #f7ce00;
+
+    font-size: 34px;
+    font-weight: 900;
+
     letter-spacing: 3px;
 
-    margin-bottom: 5px;
+    text-shadow:
+        2px 2px 0 #c8351d;
 }
 
 
-/* Small VIP label */
+/* VIP label */
 .vip-label {
+    margin: 0 -36px 32px;
+
+    padding: 8px 20px 22px;
+
+    background-color: #161616;
+
+    color: #ffffff;
+
     font-size: 13px;
     font-weight: bold;
-    letter-spacing: 2px;
 
-    margin-bottom: 25px;
+    letter-spacing: 4px;
 }
 
 
-/* Main offer heading */
+/* =========================================
+   OFFER
+========================================= */
+
 h1 {
-    font-size: 34px;
+    margin: 10px 0 12px;
 
-    margin-bottom: 15px;
+    color: #1d1d1d;
+
+    font-size: 38px;
+    line-height: 1.1;
+
+    font-weight: 900;
 }
 
 
-/* Offer explanation */
+/* Highlight FREE visually */
+h1::first-line {
+    color: #1d1d1d;
+}
+
+
 .offer-description {
-    line-height: 1.6;
+    max-width: 390px;
 
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+
+    color: #555555;
+
+    font-size: 16px;
+
+    line-height: 1.6;
 }
 
 
-/* Form layout */
+/* Small decorative divider */
+.offer-description::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 24px auto 0;
+
+    background-color: #e34a23;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
 form {
     display: flex;
     flex-direction: column;
@@ -86,7 +165,6 @@ form {
 }
 
 
-/* Each label/input pair */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -95,153 +173,388 @@ form {
 }
 
 
-/* Labels */
 .form-group label {
-    font-weight: bold;
+    color: #1b1b1b;
+
     font-size: 14px;
+
+    font-weight: 800;
 }
 
 
-/* Text inputs */
+/* Inputs */
 .form-group input {
     width: 100%;
 
-    padding: 13px;
+    padding: 15px 14px;
 
-    border: 1px solid #cccccc;
-    border-radius: 8px;
+    border: 2px solid #dddddd;
+
+    border-radius: 10px;
+
+    background-color: #fffdf9;
+
+    color: #1b1b1b;
 
     font-size: 16px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-/* Highlight input when customer clicks it */
+.form-group input::placeholder {
+    color: #999999;
+}
+
+
+/* Active input */
 .form-group input:focus {
-    outline: 2px solid #333333;
-    border-color: transparent;
+    outline: none;
+
+    border-color: #e14b25;
+
+    box-shadow:
+        0 0 0 3px rgba(225, 75, 37, 0.15);
 }
 
 
-/* Marketing consent area */
+/* =========================================
+   MARKETING CONSENT
+========================================= */
+
 .consent-group {
     display: flex;
     align-items: flex-start;
 
-    gap: 10px;
+    gap: 11px;
+
+    padding: 13px;
+
+    background-color: #fff8dc;
+
+    border: 1px solid #f0d46d;
+
+    border-radius: 10px;
+
+    color: #444444;
 
     font-size: 12px;
+
     line-height: 1.5;
 }
 
 
-/* Make checkbox easier to click */
 .consent-group input {
-    margin-top: 3px;
+    flex-shrink: 0;
 
-    width: 18px;
-    height: 18px;
+    width: 19px;
+    height: 19px;
+
+    margin-top: 2px;
+
+    accent-color: #d94322;
 }
 
 
-/* Claim button */
+/* =========================================
+   CLAIM BUTTON
+========================================= */
+
 button {
     width: 100%;
 
-    padding: 15px;
+    margin-top: 4px;
+
+    padding: 17px;
 
     border: none;
-    border-radius: 8px;
 
-    background-color: #222222;
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-
-/* Button hover effect */
-button:hover {
-    opacity: 0.85;
-}
-
-
-/* Success section */
-.success-section {
-    margin-top: 10px;
-}
-
-
-/* Used by JavaScript to hide elements */
-.hidden {
-    display: none;
-}
-
-
-/* Coupon */
-.coupon {
-    margin-top: 25px;
-
-    padding: 25px;
-
-    border: 2px dashed #333333;
     border-radius: 10px;
 
-    background-color: #fafafa;
+    background:
+        linear-gradient(
+            135deg,
+            #f7ce00,
+            #f0ad00
+        );
+
+    color: #171717;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 0 #c77c00,
+        0 10px 20px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 0 #c77c00,
+        0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+button:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 3px 0 #c77c00;
+}
+
+
+/* =========================================
+   SUCCESS / DUPLICATE SECTION
+========================================= */
+
+.success-section {
+    margin-top: 25px;
+
+    padding-top: 5px;
+}
+
+
+.success-section h2 {
+    margin-bottom: 14px;
+
+    color: #1c1c1c;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+}
+
+
+#success-message {
+    color: #4b4b4b;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   COUPON CARD
+========================================= */
+
+.coupon {
+    position: relative;
+
+    margin-top: 26px;
+
+    padding: 28px 22px;
+
+    border: 3px dashed #e14925;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8dd,
+            #fffdf5
+        );
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Decorative top bar */
+.coupon::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 25%;
+
+    width: 50%;
+    height: 5px;
+
+    background-color: #f2c600;
+
+    border-radius: 0 0 10px 10px;
 }
 
 
 /* Coupon heading */
 .coupon-title {
-    font-size: 24px;
-    font-weight: bold;
+    margin: 0 0 18px;
 
-    margin-top: 0;
+    color: #1d1d1d;
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
 }
 
 
-/* Coupon code */
-.coupon-code {
-    font-size: 20px;
-    font-weight: bold;
+/* Coupon normal description */
+#coupon-description {
+    color: #555555;
 
-    letter-spacing: 2px;
-
-    margin-bottom: 0;
-}
-
-
-/* Demo disclaimer */
-.coupon-note {
-    font-size: 11px;
-
-    margin-top: 15px;
-}
-
-
-/* Bottom text */
-.fine-print {
-    margin-top: 30px;
-
-    font-size: 11px;
+    font-size: 15px;
 
     line-height: 1.5;
 }
 
 
-/*
-    Make the page fit better on smaller phones
-*/
+/* Coupon code / instruction */
+.coupon-code {
+    margin: 20px 0 0;
+
+    color: #c93c20;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================
+   DISCLAIMERS
+========================================= */
+
+.coupon-note {
+    margin-top: 18px;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    font-style: italic;
+}
+
+
+.fine-print {
+    margin-top: 30px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+
+    color: #888888;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   HIDDEN ELEMENTS
+========================================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 500px) {
 
-    .offer-card {
-        padding: 30px 20px;
+    body {
+        padding: 18px 10px;
+
+        background:
+            linear-gradient(
+                180deg,
+                #1c1c1c 0px,
+                #1c1c1c 130px,
+                #f4efe7 130px,
+                #f4efe7 100%
+            );
     }
 
+
+    .offer-card {
+        padding:
+            0 22px 28px;
+
+        border-radius: 18px;
+    }
+
+
+    .restaurant-name {
+        margin:
+            0 -22px;
+
+        padding:
+            26px 15px 6px;
+
+        font-size: 30px;
+    }
+
+
+    .vip-label {
+        margin:
+            0 -22px 28px;
+
+        padding:
+            7px 15px 20px;
+    }
+
+
     h1 {
-        font-size: 28px;
+        font-size: 31px;
+    }
+
+
+    .offer-description {
+        font-size: 15px;
+    }
+
+
+    button {
+        font-size: 16px;
+    }
+
+
+    .success-section h2 {
+        font-size: 27px;
+    }
+
+
+    .coupon {
+        padding:
+            25px 17px;
+    }
+
+
+    .coupon-title {
+        font-size: 24px;
+    }
+
+
+    .coupon-code {
+        font-size: 17px;
+
+        letter-spacing: 0.7px;
     }
 
 }
