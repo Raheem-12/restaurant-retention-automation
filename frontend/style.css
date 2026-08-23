@@ -1,0 +1,247 @@
+/* Remove the browser's default spacing */
+* {
+    box-sizing: border-box;
+}
+
+
+/* Entire webpage */
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f3f0eb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+
+/* Main restaurant offer card */
+.offer-card {
+    width: 100%;
+    max-width: 480px;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+}
+
+
+/* Restaurant name */
+.restaurant-name {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 5px;
+}
+
+
+/* Small VIP label */
+.vip-label {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Main offer heading */
+h1 {
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Offer explanation */
+.offer-description {
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    text-align: left;
+}
+
+
+/* Each label/input pair */
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+/* Labels */
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* Text inputs */
+.form-group input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+
+/* Highlight input when customer clicks it */
+.form-group input:focus {
+    outline: 2px solid #333333;
+    border-color: transparent;
+}
+
+
+/* Marketing consent area */
+.consent-group {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* Make checkbox easier to click */
+.consent-group input {
+    margin-top: 3px;
+
+    width: 18px;
+    height: 18px;
+}
+
+
+/* Claim button */
+button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #222222;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* Button hover effect */
+button:hover {
+    opacity: 0.85;
+}
+
+
+/* Success section */
+.success-section {
+    margin-top: 10px;
+}
+
+
+/* Used by JavaScript to hide elements */
+.hidden {
+    display: none;
+}
+
+
+/* Coupon */
+.coupon {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border: 2px dashed #333333;
+    border-radius: 10px;
+
+    background-color: #fafafa;
+}
+
+
+/* Coupon heading */
+.coupon-title {
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-top: 0;
+}
+
+
+/* Coupon code */
+.coupon-code {
+    font-size: 20px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 0;
+}
+
+
+/* Demo disclaimer */
+.coupon-note {
+    font-size: 11px;
+
+    margin-top: 15px;
+}
+
+
+/* Bottom text */
+.fine-print {
+    margin-top: 30px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/*
+    Make the page fit better on smaller phones
+*/
+@media (max-width: 500px) {
+
+    .offer-card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+}

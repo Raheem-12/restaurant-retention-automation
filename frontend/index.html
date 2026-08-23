@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ember Grill VIP Club</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="offer-card">
+
+        <div class="restaurant-name">
+            EMBER GRILL
+        </div>
+
+        <p class="vip-label">
+            VIP CLUB
+        </p>
+
+        <h1>
+            Get a FREE Appetizer
+        </h1>
+
+        <p class="offer-description">
+            Join the Ember Grill VIP Club and receive
+            a free appetizer on your next visit.
+        </p>
+
+
+        <!-- CUSTOMER SIGNUP FORM -->
+        <form id="signup-form">
+
+            <div class="form-group">
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Smith"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="(555) 123-4567"
+                    required
+                >
+            </div>
+
+
+            <div class="consent-group">
+
+                <input
+                    type="checkbox"
+                    id="marketing-consent"
+                    name="marketingConsent"
+                    required
+                >
+
+                <label for="marketing-consent">
+                    I agree to receive promotional emails
+                    and messages from Ember Grill. I can
+                    unsubscribe at any time.
+                </label>
+
+            </div>
+
+
+            <button type="submit">
+                Claim My Free Appetizer
+            </button>
+
+        </form>
+
+
+        <!--
+            Hidden until the customer successfully
+            submits the form.
+        -->
+        <section
+            id="success-section"
+            class="success-section hidden"
+        >
+
+            <h2>
+                You're in! 🎉
+            </h2>
+
+            <p id="success-message"></p>
+
+            <div class="coupon">
+
+                <p class="coupon-title">
+                    FREE APPETIZER
+                </p>
+
+                <p>
+                    Show this offer to your server
+                    on your next visit.
+                </p>
+
+                <p class="coupon-code">
+                    EMBER-VIP
+                </p>
+
+            </div>
+
+            <p class="coupon-note">
+                Demo offer — not valid at a real restaurant.
+            </p>
+
+        </section>
+
+
+        <p class="fine-print">
+            Demo restaurant created for an automation portfolio project.
+        </p>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
