@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Su Pollo VIP Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">SU POLLO</p>
+                <h1>VIP Club Dashboard</h1>
+                <p class="subtitle">
+                    Customer retention overview
+                </p>
+            </div>
+        </header>
+
+
+        <section class="metrics-grid">
+
+            <article class="metric-card">
+                <p class="metric-label">
+                    VIP Members
+                </p>
+
+                <p
+                    class="metric-value"
+                    id="total-members"
+                >
+                    --
+                </p>
+            </article>
+
+
+            <article class="metric-card">
+                <p class="metric-label">
+                    Coupons Redeemed
+                </p>
+
+                <p
+                    class="metric-value"
+                    id="redeemed-count"
+                >
+                    --
+                </p>
+            </article>
+
+
+            <article class="metric-card">
+                <p class="metric-label">
+                    Redemption Rate
+                </p>
+
+                <p
+                    class="metric-value"
+                    id="redemption-rate"
+                >
+                    --
+                </p>
+            </article>
+
+
+            <article class="metric-card">
+                <p class="metric-label">
+                    New This Week
+                </p>
+
+                <p
+                    class="metric-value"
+                    id="new-this-week"
+                >
+                    --
+                </p>
+            </article>
+
+        </section>
+
+
+        <section class="panel">
+
+            <div class="panel-heading">
+                <div>
+                    <h2>Recent Signups</h2>
+                    <p>
+                        Latest customers who joined the VIP Club
+                    </p>
+                </div>
+            </div>
+
+
+            <div
+                class="recent-signups"
+                id="recent-signups"
+            >
+
+                <p class="loading">
+                    Loading dashboard...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <p class="dashboard-note">
+            Demo dashboard created for Su Pollo.
+            Not affiliated with or authorized by Su Pollo.
+        </p>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

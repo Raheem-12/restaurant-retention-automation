@@ -1,0 +1,347 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f4f1eb;
+
+    color:
+        #171717;
+}
+
+
+.dashboard {
+    width: min(
+        1100px,
+        calc(100% - 40px)
+    );
+
+    margin:
+        40px auto;
+
+    padding-bottom:
+        40px;
+}
+
+
+.dashboard-header {
+    background:
+        #151515;
+
+    border-top:
+        6px solid #d83a22;
+
+    border-radius:
+        18px;
+
+    padding:
+        32px;
+
+    margin-bottom:
+        28px;
+
+    color:
+        white;
+}
+
+
+.eyebrow {
+    margin:
+        0 0 6px;
+
+    color:
+        #f5b51b;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        5px;
+}
+
+
+.dashboard-header h1 {
+    margin:
+        0;
+
+    font-size:
+        clamp(
+            32px,
+            5vw,
+            52px
+        );
+}
+
+
+.subtitle {
+    margin:
+        10px 0 0;
+
+    color:
+        #d3d3d3;
+}
+
+
+.metrics-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        18px;
+
+    margin-bottom:
+        28px;
+}
+
+
+.metric-card {
+    background:
+        white;
+
+    border-radius:
+        16px;
+
+    padding:
+        26px;
+
+    border:
+        1px solid #dedbd4;
+
+    box-shadow:
+        0 8px 24px
+        rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+}
+
+
+.metric-label {
+    margin:
+        0;
+
+    color:
+        #656565;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+}
+
+
+.metric-value {
+    margin:
+        14px 0 0;
+
+    font-size:
+        42px;
+
+    font-weight:
+        800;
+
+    color:
+        #171717;
+}
+
+
+.panel {
+    background:
+        white;
+
+    border:
+        1px solid #dedbd4;
+
+    border-radius:
+        16px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 8px 24px
+        rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+}
+
+
+.panel-heading {
+    padding:
+        24px 26px;
+
+    border-bottom:
+        1px solid #ece8e1;
+}
+
+
+.panel-heading h2 {
+    margin:
+        0;
+
+    font-size:
+        24px;
+}
+
+
+.panel-heading p {
+    margin:
+        6px 0 0;
+
+    color:
+        #737373;
+}
+
+
+.recent-signups {
+    padding:
+        0 26px;
+}
+
+
+.signup-row {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        20px 0;
+
+    border-bottom:
+        1px solid #ece8e1;
+}
+
+
+.signup-row:last-child {
+    border-bottom:
+        none;
+}
+
+
+.signup-name {
+    font-weight:
+        700;
+}
+
+
+.signup-date {
+    color:
+        #666666;
+}
+
+
+.loading,
+.error-message {
+    padding:
+        24px 0;
+
+    color:
+        #737373;
+}
+
+
+.error-message {
+    color:
+        #b42318;
+}
+
+
+.dashboard-note {
+    margin:
+        22px 0 0;
+
+    text-align:
+        center;
+
+    color:
+        #777777;
+
+    font-size:
+        13px;
+}
+
+
+@media (
+    max-width: 800px
+) {
+
+    .metrics-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+}
+
+
+@media (
+    max-width: 520px
+) {
+
+    .dashboard {
+        width:
+            min(
+                100% - 24px,
+                1100px
+            );
+
+        margin:
+            20px auto;
+    }
+
+
+    .dashboard-header {
+        padding:
+            24px;
+    }
+
+
+    .metrics-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .metric-value {
+        font-size:
+            36px;
+    }
+
+
+    .signup-row {
+        flex-direction:
+            column;
+
+        gap:
+            6px;
+    }
+
+}
