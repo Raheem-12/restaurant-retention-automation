@@ -1,560 +1,330 @@
-/* =========================================
-   GLOBAL RESET
-========================================= */
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+:root {
+  --background: #0b0d10;
+  --surface: #13161b;
+  --surface-light: #191d23;
+  --text: #f4f4f5;
+  --muted: #a7adb8;
+  --accent: #ff6b35;
+  --accent-hover: #ff8258;
+  --border: #2a2f38;
+}
 
-/* =========================================
-   PAGE
-========================================= */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    margin: 0;
-    min-height: 100vh;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        linear-gradient(
-            180deg,
-            #1c1c1c 0px,
-            #1c1c1c 180px,
-            #f4efe7 180px,
-            #f4efe7 100%
-        );
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    padding: 45px 16px;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-
-/* =========================================
-   MAIN OFFER CARD
-========================================= */
-
-.offer-card {
-    width: 100%;
-    max-width: 500px;
-
-    background-color: #ffffff;
-
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    padding: 0 36px 36px;
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.25);
-
-    text-align: center;
-
-    border-top: 8px solid #f4c300;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-
-/* =========================================
-   RESTAURANT BRANDING
-========================================= */
-
-.restaurant-name {
-    margin: 0 -36px;
-
-    padding: 30px 20px 8px;
-
-    background-color: #161616;
-
-    color: #f7ce00;
-
-    font-size: 34px;
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    text-shadow:
-        2px 2px 0 #c8351d;
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
 }
 
-
-/* VIP label */
-.vip-label {
-    margin: 0 -36px 32px;
-
-    padding: 8px 20px 22px;
-
-    background-color: #161616;
-
-    color: #ffffff;
-
-    font-size: 13px;
-    font-weight: bold;
-
-    letter-spacing: 4px;
+.narrow {
+  max-width: 800px;
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 13, 16, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
 
-/* =========================================
-   OFFER
-========================================= */
+.nav-content {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+.hero {
+  padding: 110px 0 100px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.eyebrow,
+.section-label {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin-bottom: 18px;
+}
 
 h1 {
-    margin: 10px 0 12px;
-
-    color: #1d1d1d;
-
-    font-size: 38px;
-    line-height: 1.1;
-
-    font-weight: 900;
+  font-size: clamp(3rem, 7vw, 5.7rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  max-width: 850px;
 }
 
-
-/* Highlight FREE visually */
-h1::first-line {
-    color: #1d1d1d;
+.hero-description {
+  color: var(--muted);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-top: 30px;
 }
 
-
-.offer-description {
-    max-width: 390px;
-
-    margin: 0 auto 30px;
-
-    color: #555555;
-
-    font-size: 16px;
-
-    line-height: 1.6;
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
 }
 
-
-/* Small decorative divider */
-.offer-description::after {
-    content: "";
-
-    display: block;
-
-    width: 55px;
-    height: 4px;
-
-    margin: 24px auto 0;
-
-    background-color: #e34a23;
-
-    border-radius: 10px;
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
-
-/* =========================================
-   FORM
-========================================= */
-
-form {
-    display: flex;
-    flex-direction: column;
-
-    gap: 18px;
-
-    text-align: left;
+.button:hover {
+  transform: translateY(-2px);
 }
 
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-
-    gap: 7px;
+.primary {
+  background: var(--accent);
+  color: #111;
 }
 
-
-.form-group label {
-    color: #1b1b1b;
-
-    font-size: 14px;
-
-    font-weight: 800;
+.primary:hover {
+  background: var(--accent-hover);
 }
 
-
-/* Inputs */
-.form-group input {
-    width: 100%;
-
-    padding: 15px 14px;
-
-    border: 2px solid #dddddd;
-
-    border-radius: 10px;
-
-    background-color: #fffdf9;
-
-    color: #1b1b1b;
-
-    font-size: 16px;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+.secondary {
+  border: 1px solid var(--border);
+  background: var(--surface);
 }
 
-
-.form-group input::placeholder {
-    color: #999999;
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 30px;
 }
 
-
-/* Active input */
-.form-group input:focus {
-    outline: none;
-
-    border-color: #e14b25;
-
-    box-shadow:
-        0 0 0 3px rgba(225, 75, 37, 0.15);
+.metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-
-/* =========================================
-   MARKETING CONSENT
-========================================= */
-
-.consent-group {
-    display: flex;
-    align-items: flex-start;
-
-    gap: 11px;
-
-    padding: 13px;
-
-    background-color: #fff8dc;
-
-    border: 1px solid #f0d46d;
-
-    border-radius: 10px;
-
-    color: #444444;
-
-    font-size: 12px;
-
-    line-height: 1.5;
+.metric-label {
+  color: var(--muted);
 }
 
-
-.consent-group input {
-    flex-shrink: 0;
-
-    width: 19px;
-    height: 19px;
-
-    margin-top: 2px;
-
-    accent-color: #d94322;
+.metric-value {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--accent);
 }
 
-
-/* =========================================
-   CLAIM BUTTON
-========================================= */
-
-button {
-    width: 100%;
-
-    margin-top: 4px;
-
-    padding: 17px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7ce00,
-            #f0ad00
-        );
-
-    color: #171717;
-
-    font-size: 17px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.3px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 6px 0 #c77c00,
-        0 10px 20px rgba(0, 0, 0, 0.18);
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 25px 0;
 }
 
-
-button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 0 #c77c00,
-        0 12px 24px rgba(0, 0, 0, 0.2);
+.section {
+  padding: 100px 0;
+  border-top: 1px solid var(--border);
 }
 
-
-button:active {
-    transform: translateY(3px);
-
-    box-shadow:
-        0 3px 0 #c77c00;
+.section h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  max-width: 780px;
 }
 
-
-/* =========================================
-   SUCCESS / DUPLICATE SECTION
-========================================= */
-
-.success-section {
-    margin-top: 25px;
-
-    padding-top: 5px;
+.alternate {
+  background: var(--surface);
 }
 
-
-.success-section h2 {
-    margin-bottom: 14px;
-
-    color: #1c1c1c;
-
-    font-size: 30px;
-
-    line-height: 1.2;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 55px;
 }
 
-
-#success-message {
-    color: #4b4b4b;
-
-    font-size: 16px;
-
-    line-height: 1.55;
+.card {
+  min-height: 250px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
 }
 
-
-/* =========================================
-   COUPON CARD
-========================================= */
-
-.coupon {
-    position: relative;
-
-    margin-top: 26px;
-
-    padding: 28px 22px;
-
-    border: 3px dashed #e14925;
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff8dd,
-            #fffdf5
-        );
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.08);
+.alternate .card {
+  background: var(--background);
 }
 
-
-/* Decorative top bar */
-.coupon::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 25%;
-
-    width: 50%;
-    height: 5px;
-
-    background-color: #f2c600;
-
-    border-radius: 0 0 10px 10px;
+.card > span {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 800;
 }
 
-
-/* Coupon heading */
-.coupon-title {
-    margin: 0 0 18px;
-
-    color: #1d1d1d;
-
-    font-size: 27px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.5px;
+.card h3,
+.feature h3 {
+  font-size: 1.25rem;
+  margin: 25px 0 12px;
 }
 
-
-/* Coupon normal description */
-#coupon-description {
-    color: #555555;
-
-    font-size: 15px;
-
-    line-height: 1.5;
+.card p,
+.feature p,
+.large-text,
+.contact-section p,
+footer p {
+  color: var(--muted);
 }
 
-
-/* Coupon code / instruction */
-.coupon-code {
-    margin: 20px 0 0;
-
-    color: #c93c20;
-
-    font-size: 19px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-
-    line-height: 1.35;
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 55px;
 }
 
-
-/* =========================================
-   DISCLAIMERS
-========================================= */
-
-.coupon-note {
-    margin-top: 18px;
-
-    color: #777777;
-
-    font-size: 11px;
-
-    font-style: italic;
+.feature {
+  border-left: 2px solid var(--accent);
+  padding: 5px 0 5px 24px;
 }
 
-
-.fine-print {
-    margin-top: 30px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid #eeeeee;
-
-    color: #888888;
-
-    font-size: 10px;
-
-    line-height: 1.5;
+.feature h3 {
+  margin-top: 0;
 }
 
+.large-text {
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
 
-/* =========================================
-   HIDDEN ELEMENTS
-========================================= */
+.contact-section p {
+  margin: 25px 0;
+}
 
-.hidden {
+footer {
+  border-top: 1px solid var(--border);
+  padding: 45px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: end;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  color: var(--muted);
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 800px) {
+  nav {
     display: none;
-}
+  }
 
+  .hero {
+    padding: 80px 0;
+  }
 
-/* =========================================
-   MOBILE
-========================================= */
+  .hero-content,
+  .cards,
+  .feature-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
 
-@media (max-width: 500px) {
+  .hero-content {
+    gap: 50px;
+  }
 
-    body {
-        padding: 18px 10px;
+  .cards {
+    gap: 15px;
+  }
 
-        background:
-            linear-gradient(
-                180deg,
-                #1c1c1c 0px,
-                #1c1c1c 130px,
-                #f4efe7 130px,
-                #f4efe7 100%
-            );
-    }
+  .section {
+    padding: 75px 0;
+  }
 
-
-    .offer-card {
-        padding:
-            0 22px 28px;
-
-        border-radius: 18px;
-    }
-
-
-    .restaurant-name {
-        margin:
-            0 -22px;
-
-        padding:
-            26px 15px 6px;
-
-        font-size: 30px;
-    }
-
-
-    .vip-label {
-        margin:
-            0 -22px 28px;
-
-        padding:
-            7px 15px 20px;
-    }
-
-
-    h1 {
-        font-size: 31px;
-    }
-
-
-    .offer-description {
-        font-size: 15px;
-    }
-
-
-    button {
-        font-size: 16px;
-    }
-
-
-    .success-section h2 {
-        font-size: 27px;
-    }
-
-
-    .coupon {
-        padding:
-            25px 17px;
-    }
-
-
-    .coupon-title {
-        font-size: 24px;
-    }
-
-
-    .coupon-code {
-        font-size: 17px;
-
-        letter-spacing: 0.7px;
-    }
-
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
 }

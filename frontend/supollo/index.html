@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Su Pollo VIP Club Demo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="offer-card">
+
+        <div class="restaurant-name">
+            SU POLLO
+        </div>
+
+        <p class="vip-label">
+            VIP CLUB
+        </p>
+
+        <h1>
+            Get a FREE Side
+        </h1>
+
+        <p class="offer-description">
+            Join the Su Pollo VIP Club and receive a free
+            side with your next meal.
+        </p>
+
+
+        <!-- CUSTOMER SIGNUP FORM -->
+        <form id="signup-form">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                    inputmode="numeric"
+                    maxlength="14"
+                    required
+                >
+
+            </div>
+
+
+            <div class="consent-group">
+
+                <input
+                    type="checkbox"
+                    id="marketing-consent"
+                    name="marketingConsent"
+                    required
+                >
+
+                <label for="marketing-consent">
+                    I agree to receive promotional emails and messages
+                    as part of this Su Pollo VIP Club demonstration.
+                </label>
+
+            </div>
+
+
+            <button type="submit">
+                Claim My Free Side
+            </button>
+
+        </form>
+
+
+        <!-- RESULT SECTION -->
+        <section
+            id="success-section"
+            class="success-section hidden"
+        >
+
+            <h2 id="success-title">
+                You're in! 🎉
+            </h2>
+
+            <p id="success-message"></p>
+
+
+            <div class="coupon">
+
+                <p
+                    class="coupon-title"
+                    id="coupon-title"
+                >
+                    FREE SIDE
+                </p>
+
+                <p id="coupon-description">
+                    Show this offer to your server
+                    on your next visit.
+                </p>
+
+                <p
+                    class="coupon-code"
+                    id="coupon-code-message"
+                >
+                    Check your email for your unique offer code.
+                </p>
+
+            </div>
+
+
+            <p class="coupon-note">
+                Demo offer — not valid at Su Pollo.
+            </p>
+
+        </section>
+
+
+        <p class="fine-print">
+            Unofficial demonstration created for Su Pollo.
+            This promotion is not affiliated with or authorized by Su Pollo.
+        </p>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

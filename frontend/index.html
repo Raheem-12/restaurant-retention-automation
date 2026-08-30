@@ -1,176 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <title>DineSurge | Restaurant Customer Retention</title>
 
-    <title>Su Pollo VIP Club Demo</title>
+  <meta
+    name="description"
+    content="DineSurge helps restaurants turn one-time customers into repeat customers with automated offers, customer engagement, and redemption tracking."
+  />
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css" />
 </head>
-
 <body>
 
-    <main class="offer-card">
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="/" class="brand">DineSurge</a>
 
-        <div class="restaurant-name">
-            SU POLLO
+      <nav>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">CUSTOMER RETENTION FOR RESTAURANTS</p>
+
+          <h1>Turn more first-time guests into repeat customers.</h1>
+
+          <p class="hero-description">
+            DineSurge helps restaurants collect customer signups,
+            automatically deliver offers, track redemptions, and build
+            stronger relationships with returning guests.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="button primary">Contact DineSurge</a>
+            <a href="/supollo/" class="button secondary">View Demo</a>
+          </div>
         </div>
 
-        <p class="vip-label">
-            VIP CLUB
-        </p>
+        <div class="hero-card">
+          <div class="metric">
+            <span class="metric-label">Customer joins</span>
+            <span class="metric-value">01</span>
+          </div>
 
-        <h1>
-            Get a FREE Side
-        </h1>
+          <div class="divider"></div>
 
-        <p class="offer-description">
-            Join the Su Pollo VIP Club and receive a free
-            side with your next meal.
-        </p>
+          <div class="metric">
+            <span class="metric-label">Offer delivered</span>
+            <span class="metric-value">02</span>
+          </div>
 
+          <div class="divider"></div>
 
-        <!-- CUSTOMER SIGNUP FORM -->
-        <form id="signup-form">
+          <div class="metric">
+            <span class="metric-label">Visit tracked</span>
+            <span class="metric-value">03</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="form-group">
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <p class="section-label">HOW IT WORKS</p>
+        <h2>A simple retention system built around the customer journey.</h2>
 
-                <label for="name">
-                    Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    autocomplete="name"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="email">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autocomplete="email"
-                    inputmode="email"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="phone">
-                    Phone Number
-                </label>
-
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    autocomplete="tel"
-                    inputmode="numeric"
-                    maxlength="14"
-                    required
-                >
-
-            </div>
-
-
-            <div class="consent-group">
-
-                <input
-                    type="checkbox"
-                    id="marketing-consent"
-                    name="marketingConsent"
-                    required
-                >
-
-                <label for="marketing-consent">
-                    I agree to receive promotional emails and messages
-                    as part of this Su Pollo VIP Club demonstration.
-                </label>
-
-            </div>
-
-
-            <button type="submit">
-                Claim My Free Side
-            </button>
-
-        </form>
-
-
-        <!-- RESULT SECTION -->
-        <section
-            id="success-section"
-            class="success-section hidden"
-        >
-
-            <h2 id="success-title">
-                You're in! 🎉
-            </h2>
-
-            <p id="success-message"></p>
-
-
-            <div class="coupon">
-
-                <p
-                    class="coupon-title"
-                    id="coupon-title"
-                >
-                    FREE SIDE
-                </p>
-
-                <p id="coupon-description">
-                    Show this offer to your server
-                    on your next visit.
-                </p>
-
-                <p
-                    class="coupon-code"
-                    id="coupon-code-message"
-                >
-                    Check your email for your unique offer code.
-                </p>
-
-            </div>
-
-
-            <p class="coupon-note">
-                Demo offer — not valid at Su Pollo.
+        <div class="cards">
+          <article class="card">
+            <span>01</span>
+            <h3>Customers join</h3>
+            <p>
+              Guests join a restaurant's customer list through a simple
+              signup experience and choose whether to receive marketing.
             </p>
+          </article>
 
-        </section>
+          <article class="card">
+            <span>02</span>
+            <h3>Offers are delivered</h3>
+            <p>
+              DineSurge can automatically send unique offers and customer
+              communications through connected restaurant accounts.
+            </p>
+          </article>
 
+          <article class="card">
+            <span>03</span>
+            <h3>Redemptions are tracked</h3>
+            <p>
+              Restaurants can record offer redemptions and view customer
+              engagement data without managing the workflow manually.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <p class="fine-print">
-            Unofficial demonstration created for Su Pollo.
-            This promotion is not affiliated with or authorized by Su Pollo.
+    <section id="features" class="section alternate">
+      <div class="container">
+        <p class="section-label">FOR RESTAURANTS</p>
+        <h2>Designed to handle the operational work behind retention.</h2>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Automated customer offers</h3>
+            <p>
+              Deliver unique offers automatically after an eligible customer
+              signs up.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Duplicate protection</h3>
+            <p>
+              Customer information can be checked before issuing a new offer
+              to reduce repeated claims.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Redemption tracking</h3>
+            <p>
+              Track when offers are redeemed so restaurant teams can understand
+              how the program is being used.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Restaurant-controlled data</h3>
+            <p>
+              DineSurge can connect to authorized restaurant accounts and
+              customer-management tools used to operate the service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <p class="section-label">ABOUT DINESURGE</p>
+        <h2>Technology focused on bringing customers back.</h2>
+
+        <p class="large-text">
+          DineSurge is a restaurant customer-retention platform designed to
+          automate repetitive customer engagement tasks while giving restaurant
+          owners visibility into signups, offers, and redemptions.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container narrow">
+        <p class="section-label">CONTACT</p>
+        <h2>Interested in using DineSurge for your restaurant?</h2>
+
+        <p>
+          Contact us to discuss a restaurant-specific customer retention setup.
         </p>
 
-    </main>
+        <a
+          class="button primary"
+          href="mailto:contact@dinesurge.com"
+        >
+          contact@dinesurge.com
+        </a>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <strong>DineSurge</strong>
+        <p>Restaurant customer retention systems.</p>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+      </div>
 
+      <p class="copyright">
+        &copy; <span id="year"></span> DineSurge
+      </p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
-
 </html>
