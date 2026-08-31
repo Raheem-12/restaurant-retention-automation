@@ -1,203 +1,687 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DineSurge | Restaurant Customer Retention</title>
+    <title>DineSurge | Restaurant Customer Retention</title>
 
-  <meta
-    name="description"
-    content="DineSurge helps restaurants turn one-time customers into repeat customers with automated offers, customer engagement, and redemption tracking."
-  />
+    <meta
+        name="description"
+        content="DineSurge helps restaurants turn first-time diners into repeat customers with automated offers, guest capture, redemption tracking, and retention tools."
+    >
 
-  <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
 
-  <header class="navbar">
-    <div class="container nav-content">
-      <a href="/" class="brand">DineSurge</a>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
 
-      <nav>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+            <a href="/" class="brand">
+                <span class="brand-mark">D</span>
+                <span>DineSurge</span>
+            </a>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">CUSTOMER RETENTION FOR RESTAURANTS</p>
+            <nav class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-          <h1>Turn more first-time guests into repeat customers.</h1>
+            <a href="#contact" class="button button-dark nav-button">
+                Book a Demo
+            </a>
 
-          <p class="hero-description">
-            DineSurge helps restaurants collect customer signups,
-            automatically deliver offers, track redemptions, and build
-            stronger relationships with returning guests.
-          </p>
+        </div>
+    </header>
 
-          <div class="hero-actions">
-            <a href="#contact" class="button primary">Contact DineSurge</a>
-            <a href="/supollo/" class="button secondary">View Demo</a>
-          </div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+
+                    <div class="eyebrow">
+                        CUSTOMER RETENTION FOR RESTAURANTS
+                    </div>
+
+                    <h1>
+                        Turn first-time diners
+                        <span>into regulars.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        DineSurge helps restaurants capture guest information,
+                        deliver personalized offers, and bring customers back
+                        automatically.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#contact" class="button button-green">
+                            Book a Demo
+                        </a>
+
+                        <a href="#how-it-works" class="button button-light">
+                            See How It Works
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        Built for independent restaurants that want more repeat customers.
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT PREVIEW -->
+                <div class="hero-product">
+
+                    <div class="browser-window">
+
+                        <div class="browser-top">
+                            <div class="browser-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="browser-address">
+                                dinesurge.com
+                            </div>
+                        </div>
+
+                        <div class="dashboard-preview">
+
+                            <div class="preview-sidebar">
+                                <div class="preview-logo">D</div>
+
+                                <div class="side-line active"></div>
+                                <div class="side-line"></div>
+                                <div class="side-line"></div>
+                                <div class="side-line short"></div>
+                            </div>
+
+                            <div class="preview-content">
+
+                                <div class="preview-header">
+                                    <div>
+                                        <small>OVERVIEW</small>
+                                        <h3>Guest Retention</h3>
+                                    </div>
+
+                                    <div class="status-badge">
+                                        ● Live
+                                    </div>
+                                </div>
+
+                                <div class="metric-grid">
+
+                                    <div class="metric-card">
+                                        <span>VIP Guests</span>
+                                        <strong>247</strong>
+                                        <small>↑ 18% this month</small>
+                                    </div>
+
+                                    <div class="metric-card">
+                                        <span>Offers Redeemed</span>
+                                        <strong>68</strong>
+                                        <small>27.5% redemption</small>
+                                    </div>
+
+                                    <div class="metric-card">
+                                        <span>Return Visits</span>
+                                        <strong>54</strong>
+                                        <small>Tracked automatically</small>
+                                    </div>
+
+                                </div>
+
+                                <div class="activity-card">
+
+                                    <div class="activity-heading">
+                                        <strong>Recent activity</strong>
+                                        <span>Today</span>
+                                    </div>
+
+                                    <div class="activity-row">
+                                        <div class="activity-icon">+</div>
+                                        <div>
+                                            <strong>New VIP signup</strong>
+                                            <small>Customer joined the guest list</small>
+                                        </div>
+                                        <span>2m</span>
+                                    </div>
+
+                                    <div class="activity-row">
+                                        <div class="activity-icon">✓</div>
+                                        <div>
+                                            <strong>Offer redeemed</strong>
+                                            <small>VIP coupon redeemed in-store</small>
+                                        </div>
+                                        <span>14m</span>
+                                    </div>
+
+                                    <div class="activity-row">
+                                        <div class="activity-icon">↗</div>
+                                        <div>
+                                            <strong>Offer delivered</strong>
+                                            <small>Automated customer email sent</small>
+                                        </div>
+                                        <span>21m</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-card">
+                        <span>RETURN VISITS</span>
+                        <strong>+22%</strong>
+                        <small>Last 30 days</small>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- TRUST STRIP -->
+        <section class="trust-strip">
+            <div class="container trust-content">
+                <span>CAPTURE</span>
+                <span class="trust-dot">•</span>
+                <span>ENGAGE</span>
+                <span class="trust-dot">•</span>
+                <span>REWARD</span>
+                <span class="trust-dot">•</span>
+                <span>MEASURE</span>
+                <span class="trust-dot">•</span>
+                <span>RETAIN</span>
+            </div>
+        </section>
+
+
+        <!-- PROBLEM -->
+        <section class="problem-section">
+
+            <div class="container problem-grid">
+
+                <div>
+                    <div class="section-label">THE PROBLEM</div>
+
+                    <h2>
+                        A great meal shouldn't be the end of the relationship.
+                    </h2>
+                </div>
+
+                <div class="problem-copy">
+                    <p>
+                        Restaurants serve hundreds of guests, but once those
+                        customers walk out the door, most restaurants have no
+                        direct way to bring them back.
+                    </p>
+
+                    <p>
+                        DineSurge turns each visit into an opportunity to build
+                        a long-term customer relationship.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DARK FEATURE -->
+        <section class="outcome-section">
+
+            <div class="container">
+
+                <div class="section-label green-label">
+                    THE DINESURGE SYSTEM
+                </div>
+
+                <div class="outcome-heading">
+
+                    <h2>
+                        Your repeat-customer engine,
+                        running in the background.
+                    </h2>
+
+                    <p>
+                        Capture customer information, deliver offers,
+                        track redemptions, and understand what brings
+                        guests back.
+                    </p>
+
+                </div>
+
+
+                <div class="outcome-grid">
+
+                    <article class="outcome-card">
+                        <div class="card-number">01</div>
+
+                        <div class="feature-icon">+</div>
+
+                        <h3>Capture guests</h3>
+
+                        <p>
+                            Give customers a simple way to join your VIP list
+                            while they're already engaged with your restaurant.
+                        </p>
+
+                        <div class="mini-ui">
+                            <div class="mini-field">Name</div>
+                            <div class="mini-field">Email</div>
+                            <div class="mini-button">Join VIP Club</div>
+                        </div>
+                    </article>
+
+
+                    <article class="outcome-card">
+                        <div class="card-number">02</div>
+
+                        <div class="feature-icon">↗</div>
+
+                        <h3>Bring them back</h3>
+
+                        <p>
+                            Automatically deliver restaurant-approved offers
+                            designed to create another visit.
+                        </p>
+
+                        <div class="offer-preview">
+                            <small>YOUR VIP OFFER</small>
+                            <strong>Free Side</strong>
+                            <span>SUPOLLO-A7X2Q</span>
+                        </div>
+                    </article>
+
+
+                    <article class="outcome-card">
+                        <div class="card-number">03</div>
+
+                        <div class="feature-icon">✓</div>
+
+                        <h3>Measure results</h3>
+
+                        <p>
+                            Track signups and redemptions so you can see how
+                            your retention system is performing.
+                        </p>
+
+                        <div class="chart-preview">
+                            <div class="chart-bar bar-1"></div>
+                            <div class="chart-bar bar-2"></div>
+                            <div class="chart-bar bar-3"></div>
+                            <div class="chart-bar bar-4"></div>
+                            <div class="chart-bar bar-5"></div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section class="how-section" id="how-it-works">
+
+            <div class="container">
+
+                <div class="section-header centered">
+
+                    <div class="section-label">
+                        HOW IT WORKS
+                    </div>
+
+                    <h2>
+                        From first visit to next visit.
+                    </h2>
+
+                    <p>
+                        A simple customer experience backed by an automated
+                        retention system.
+                    </p>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <article class="step">
+                        <div class="step-number">01</div>
+
+                        <h3>Customer joins</h3>
+
+                        <p>
+                            Guests scan your restaurant's QR code and join
+                            your VIP list.
+                        </p>
+                    </article>
+
+                    <div class="step-arrow">→</div>
+
+                    <article class="step">
+                        <div class="step-number">02</div>
+
+                        <h3>Offer delivered</h3>
+
+                        <p>
+                            DineSurge sends the guest a unique,
+                            restaurant-approved offer.
+                        </p>
+                    </article>
+
+                    <div class="step-arrow">→</div>
+
+                    <article class="step">
+                        <div class="step-number">03</div>
+
+                        <h3>Guest returns</h3>
+
+                        <p>
+                            Staff redeem the offer and the visit is
+                            recorded automatically.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="features-section" id="features">
+
+            <div class="container">
+
+                <div class="features-heading">
+
+                    <div>
+                        <div class="section-label">
+                            BUILT FOR RESTAURANTS
+                        </div>
+
+                        <h2>
+                            Retention without another complicated system.
+                        </h2>
+                    </div>
+
+                    <p>
+                        DineSurge handles the technology so your team can
+                        stay focused on serving customers.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <article class="feature">
+                        <div class="feature-symbol">01</div>
+                        <h3>VIP customer capture</h3>
+                        <p>
+                            Build an opted-in customer list directly from
+                            restaurant visits.
+                        </p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature-symbol">02</div>
+                        <h3>Automated offers</h3>
+                        <p>
+                            Deliver unique offers without manually contacting
+                            every customer.
+                        </p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature-symbol">03</div>
+                        <h3>QR redemption</h3>
+                        <p>
+                            Give staff a fast way to validate and redeem
+                            customer offers.
+                        </p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature-symbol">04</div>
+                        <h3>Duplicate protection</h3>
+                        <p>
+                            Reduce repeated signups using customer email and
+                            phone information.
+                        </p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature-symbol">05</div>
+                        <h3>Performance tracking</h3>
+                        <p>
+                            See customer signups, offer activity, and
+                            redemptions from one place.
+                        </p>
+                    </article>
+
+                    <article class="feature">
+                        <div class="feature-symbol">06</div>
+                        <h3>Managed for you</h3>
+                        <p>
+                            DineSurge handles setup, automation, and ongoing
+                            system management.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEMO -->
+        <section class="demo-section" id="demo">
+
+            <div class="container demo-grid">
+
+                <div class="demo-copy">
+
+                    <div class="section-label green-label">
+                        SEE IT IN ACTION
+                    </div>
+
+                    <h2>
+                        Experience the customer journey yourself.
+                    </h2>
+
+                    <p>
+                        We've built a live restaurant demonstration so you can
+                        see exactly what a guest experiences when joining a
+                        DineSurge-powered VIP program.
+                    </p>
+
+                    <a
+                        href="/supollo/"
+                        class="button button-green"
+                    >
+                        View Customer Demo →
+                    </a>
+
+                </div>
+
+
+                <div class="phone-wrapper">
+
+                    <div class="phone">
+
+                        <div class="phone-top"></div>
+
+                        <div class="phone-screen">
+
+                            <small>WELCOME TO</small>
+
+                            <h3>SU POLLO</h3>
+
+                            <span class="vip">VIP CLUB</span>
+
+                            <p>Join today and receive your VIP offer.</p>
+
+                            <div class="phone-field">
+                                Your name
+                            </div>
+
+                            <div class="phone-field">
+                                Email address
+                            </div>
+
+                            <div class="phone-field">
+                                Phone number
+                            </div>
+
+                            <div class="phone-button">
+                                JOIN THE VIP CLUB
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about-section">
+
+            <div class="container about-grid">
+
+                <div class="section-label">
+                    ABOUT DINESURGE
+                </div>
+
+                <div>
+
+                    <h2>
+                        Technology built around one simple goal:
+                        more repeat customers.
+                    </h2>
+
+                    <p>
+                        DineSurge builds and manages customer-retention systems
+                        for restaurants. Instead of adding another complicated
+                        platform to your day, we handle the setup and automation
+                        behind the scenes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-section" id="contact">
+
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <div class="section-label green-label">
+                        READY TO GROW?
+                    </div>
+
+                    <h2>
+                        Bring more guests back.
+                        <span>Automatically.</span>
+                    </h2>
+
+                    <p>
+                        See how DineSurge could work for your restaurant.
+                    </p>
+
+                    <a
+                        href="mailto:381raheem@gmail.com?subject=DineSurge Demo"
+                        class="button button-green"
+                    >
+                        Book a Demo
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-top">
+
+            <div>
+                <a href="/" class="brand footer-brand">
+                    <span class="brand-mark">D</span>
+                    <span>DineSurge</span>
+                </a>
+
+                <p>
+                    Helping restaurants turn more guests into regulars.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="/supollo/">Demo</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+            </div>
+
         </div>
 
-        <div class="hero-card">
-          <div class="metric">
-            <span class="metric-label">Customer joins</span>
-            <span class="metric-value">01</span>
-          </div>
+        <div class="container footer-bottom">
+            <span>
+                © <span id="year"></span> DineSurge. All rights reserved.
+            </span>
 
-          <div class="divider"></div>
-
-          <div class="metric">
-            <span class="metric-label">Offer delivered</span>
-            <span class="metric-value">02</span>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="metric">
-            <span class="metric-label">Visit tracked</span>
-            <span class="metric-value">03</span>
-          </div>
+            <span>
+                Restaurant Customer Retention
+            </span>
         </div>
-      </div>
-    </section>
 
-    <section id="how-it-works" class="section">
-      <div class="container">
-        <p class="section-label">HOW IT WORKS</p>
-        <h2>A simple retention system built around the customer journey.</h2>
+    </footer>
 
-        <div class="cards">
-          <article class="card">
-            <span>01</span>
-            <h3>Customers join</h3>
-            <p>
-              Guests join a restaurant's customer list through a simple
-              signup experience and choose whether to receive marketing.
-            </p>
-          </article>
 
-          <article class="card">
-            <span>02</span>
-            <h3>Offers are delivered</h3>
-            <p>
-              DineSurge can automatically send unique offers and customer
-              communications through connected restaurant accounts.
-            </p>
-          </article>
+    <script src="/script.js"></script>
 
-          <article class="card">
-            <span>03</span>
-            <h3>Redemptions are tracked</h3>
-            <p>
-              Restaurants can record offer redemptions and view customer
-              engagement data without managing the workflow manually.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="features" class="section alternate">
-      <div class="container">
-        <p class="section-label">FOR RESTAURANTS</p>
-        <h2>Designed to handle the operational work behind retention.</h2>
-
-        <div class="feature-grid">
-          <div class="feature">
-            <h3>Automated customer offers</h3>
-            <p>
-              Deliver unique offers automatically after an eligible customer
-              signs up.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Duplicate protection</h3>
-            <p>
-              Customer information can be checked before issuing a new offer
-              to reduce repeated claims.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Redemption tracking</h3>
-            <p>
-              Track when offers are redeemed so restaurant teams can understand
-              how the program is being used.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Restaurant-controlled data</h3>
-            <p>
-              DineSurge can connect to authorized restaurant accounts and
-              customer-management tools used to operate the service.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container narrow">
-        <p class="section-label">ABOUT DINESURGE</p>
-        <h2>Technology focused on bringing customers back.</h2>
-
-        <p class="large-text">
-          DineSurge is a restaurant customer-retention platform designed to
-          automate repetitive customer engagement tasks while giving restaurant
-          owners visibility into signups, offers, and redemptions.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="container narrow">
-        <p class="section-label">CONTACT</p>
-        <h2>Interested in using DineSurge for your restaurant?</h2>
-
-        <p>
-          Contact us to discuss a restaurant-specific customer retention setup.
-        </p>
-
-        <a
-          class="button primary"
-          href="mailto:contact@dinesurge.com"
-        >
-          contact@dinesurge.com
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-content">
-      <div>
-        <strong>DineSurge</strong>
-        <p>Restaurant customer retention systems.</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Service</a>
-      </div>
-
-      <p class="copyright">
-        &copy; <span id="year"></span> DineSurge
-      </p>
-    </div>
-  </footer>
-
-  <script src="/script.js"></script>
 </body>
 </html>
