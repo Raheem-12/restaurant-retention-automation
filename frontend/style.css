@@ -5,14 +5,14 @@
 }
 
 :root {
-  --background: #0b0d10;
-  --surface: #13161b;
-  --surface-light: #191d23;
-  --text: #f4f4f5;
-  --muted: #a7adb8;
-  --accent: #ff6b35;
-  --accent-hover: #ff8258;
-  --border: #2a2f38;
+  --background: #0b0b0b;
+  --surface: #12110f;
+  --surface-light: #181611;
+  --text: #f4ebdd;
+  --muted: #cfc4b4;
+  --gold: #c9a227;
+  --gold-light: #dfc368;
+  --border: #2a261f;
 }
 
 html {
@@ -30,7 +30,7 @@ body {
     sans-serif;
   background: var(--background);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 a {
@@ -51,22 +51,24 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 13, 16, 0.94);
+  background: rgba(11, 11, 11, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
 .nav-content {
-  min-height: 74px;
+  min-height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .brand {
-  font-size: 1.45rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--gold);
 }
 
 nav {
@@ -76,45 +78,55 @@ nav {
 
 nav a {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
   transition: color 0.2s ease;
 }
 
 nav a:hover {
-  color: var(--text);
+  color: var(--gold);
 }
 
 .hero {
-  padding: 110px 0 100px;
+  padding: 125px 0 115px;
+  background:
+    radial-gradient(circle at top right, rgba(201, 162, 39, 0.1), transparent 35%),
+    var(--background);
 }
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 70px;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 75px;
   align-items: center;
 }
 
 .eyebrow,
 .section-label {
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 5.7rem);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
   max-width: 850px;
 }
 
 .hero-description {
   color: var(--muted);
-  font-size: 1.2rem;
-  max-width: 700px;
+  font-size: 1.18rem;
+  max-width: 680px;
   margin-top: 30px;
 }
 
@@ -122,20 +134,21 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 38px;
+  margin-top: 40px;
 }
 
 .button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-height: 50px;
-  padding: 0 24px;
-  border-radius: 8px;
+  min-height: 52px;
+  padding: 0 26px;
+  border-radius: 4px;
   font-weight: 700;
   transition:
     transform 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .button:hover {
@@ -143,24 +156,30 @@ h1 {
 }
 
 .primary {
-  background: var(--accent);
-  color: #111;
+  background: var(--gold);
+  color: #0b0b0b;
 }
 
 .primary:hover {
-  background: var(--accent-hover);
+  background: var(--gold-light);
 }
 
 .secondary {
-  border: 1px solid var(--border);
-  background: var(--surface);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+
+.secondary:hover {
+  background: rgba(201, 162, 39, 0.08);
 }
 
 .hero-card {
-  background: var(--surface);
+  background: linear-gradient(145deg, #14120f, #0f0e0c);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 30px;
+  border-radius: 8px;
+  padding: 34px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
 }
 
 .metric {
@@ -175,27 +194,27 @@ h1 {
 }
 
 .metric-value {
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.2rem;
+  color: var(--gold);
 }
 
 .divider {
   height: 1px;
   background: var(--border);
-  margin: 25px 0;
+  margin: 27px 0;
 }
 
 .section {
-  padding: 100px 0;
+  padding: 105px 0;
   border-top: 1px solid var(--border);
 }
 
 .section h2 {
-  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
   line-height: 1.1;
-  letter-spacing: -0.04em;
-  max-width: 780px;
+  letter-spacing: -0.035em;
+  max-width: 800px;
 }
 
 .alternate {
@@ -206,15 +225,15 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-  margin-top: 55px;
+  margin-top: 58px;
 }
 
 .card {
-  min-height: 250px;
+  min-height: 260px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 28px;
+  border-radius: 6px;
+  padding: 30px;
 }
 
 .alternate .card {
@@ -222,15 +241,18 @@ h1 {
 }
 
 .card > span {
-  color: var(--accent);
-  font-size: 0.85rem;
+  color: var(--gold);
+  font-size: 0.8rem;
   font-weight: 800;
+  letter-spacing: 0.12em;
 }
 
 .card h3,
 .feature h3 {
-  font-size: 1.25rem;
-  margin: 25px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 24px 0 12px;
 }
 
 .card p,
@@ -244,13 +266,13 @@ footer p {
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 55px;
+  gap: 30px;
+  margin-top: 58px;
 }
 
 .feature {
-  border-left: 2px solid var(--accent);
-  padding: 5px 0 5px 24px;
+  border-left: 1px solid var(--gold);
+  padding: 4px 0 4px 25px;
 }
 
 .feature h3 {
@@ -259,7 +281,7 @@ footer p {
 
 .large-text {
   margin-top: 30px;
-  font-size: 1.2rem;
+  font-size: 1.18rem;
 }
 
 .contact-section p {
@@ -268,7 +290,8 @@ footer p {
 
 footer {
   border-top: 1px solid var(--border);
-  padding: 45px 0;
+  padding: 46px 0;
+  background: #090909;
 }
 
 .footer-content {
@@ -278,6 +301,12 @@ footer {
   align-items: end;
 }
 
+.footer-content strong {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+}
+
 .footer-links {
   display: flex;
   gap: 24px;
@@ -285,14 +314,14 @@ footer {
 }
 
 .footer-links a:hover {
-  color: var(--text);
+  color: var(--gold);
 }
 
 .copyright {
   grid-column: 1 / -1;
   padding-top: 25px;
   border-top: 1px solid var(--border);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
 @media (max-width: 800px) {
@@ -301,7 +330,7 @@ footer {
   }
 
   .hero {
-    padding: 80px 0;
+    padding: 85px 0;
   }
 
   .hero-content,
@@ -313,10 +342,6 @@ footer {
 
   .hero-content {
     gap: 50px;
-  }
-
-  .cards {
-    gap: 15px;
   }
 
   .section {
