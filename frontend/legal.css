@@ -5,17 +5,19 @@
 }
 
 :root {
-  --background: #0b0b0b;
-  --surface: #12110f;
-  --text: #f4ebdd;
-  --muted: #cfc4b4;
-  --gold: #c9a227;
-  --border: #2a261f;
+  --burgundy: #5c1724;
+  --burgundy-dark: #3d0e17;
+  --beige: #f7eedf;
+  --gold: #e5ad28;
+  --text: #281b18;
+  --muted: #74645d;
+  --border: #dfcfba;
 }
 
 body {
-  background: var(--background);
+  background: var(--beige);
   color: var(--text);
+
   font-family:
     Inter,
     ui-sans-serif,
@@ -24,11 +26,15 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
   line-height: 1.75;
 }
 
 header {
-  border-bottom: 1px solid var(--border);
+  background: var(--burgundy-dark);
+
+  border-bottom: 4px solid var(--gold);
+
   padding: 24px 0;
 }
 
@@ -39,9 +45,10 @@ header {
 
 .brand {
   color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
-  font-weight: 700;
+
+  font-size: 1.65rem;
+  font-weight: 900;
+
   text-decoration: none;
 }
 
@@ -49,25 +56,26 @@ main {
   padding: 80px 0 100px;
 }
 
-h1,
-h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
-}
-
 h1 {
-  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  color: var(--burgundy-dark);
+
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.05;
+
   margin-bottom: 10px;
 }
 
 .updated {
   color: var(--muted);
+
   margin-bottom: 50px;
 }
 
 h2 {
-  color: var(--gold);
-  font-size: 1.55rem;
+  color: var(--burgundy);
+
+  font-size: 1.5rem;
+
   margin-top: 42px;
   margin-bottom: 12px;
 }
@@ -83,16 +91,31 @@ p {
 
 ul {
   padding-left: 22px;
+
   margin: 12px 0 18px;
 }
 
 a {
-  color: var(--gold);
+  color: var(--burgundy);
+  font-weight: 600;
+}
+
+a:hover {
+  color: #8a293b;
 }
 
 footer {
-  border-top: 1px solid var(--border);
-  padding: 30px 0;
-  color: var(--muted);
+  background: var(--burgundy-dark);
+
+  border-top: 4px solid var(--gold);
+
+  padding: 32px 0;
+
+  color: #e4d4c5;
+
   font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--gold);
 }
