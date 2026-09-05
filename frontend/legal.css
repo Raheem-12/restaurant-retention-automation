@@ -1,14 +1,15 @@
 :root {
-    --background: #e7eef1;
-    --surface: #f5f8f9;
-    --sage: #d7e5e8;
+    --background: #111714;
+    --surface: #18201c;
 
-    --dark: #14252e;
-    --accent: #20b8b4;
+    --sage: #202a24;
 
-    --text: #14232a;
-    --muted: #61737b;
-    --border: #c5d4d9;
+    --dark: #0b100e;
+    --accent: #b7c6a7;
+
+    --text: #f2f4ef;
+    --muted: #a1aca5;
+    --border: #2b3630;
 }
 
 * {
@@ -42,7 +43,7 @@ a {
     display: flex;
     align-items: center;
 
-    background: rgba(231, 238, 241, 0.96);
+    background: rgba(17, 23, 20, 0.96);
 
     border-bottom: 1px solid var(--border);
 
@@ -82,8 +83,8 @@ a {
     display: grid;
     place-items: center;
 
-    background: var(--dark);
-    color: var(--accent);
+    background: var(--accent);
+    color: var(--dark);
 
     border-radius: 10px;
 
@@ -100,7 +101,7 @@ a {
 }
 
 .legal-home:hover {
-    color: var(--text);
+    color: white;
 }
 
 .legal-wrapper {
@@ -114,7 +115,7 @@ a {
 .legal-label {
     margin-bottom: 16px;
 
-    color: #58717a;
+    color: var(--accent);
 
     font-size: 11px;
     font-weight: 800;
@@ -127,6 +128,8 @@ a {
 .legal-wrapper h1 {
     margin-bottom: 18px;
 
+    color: white;
+
     font-size: clamp(43px, 5.7vw, 64px);
     line-height: 1;
 
@@ -138,7 +141,7 @@ a {
 .legal-updated {
     margin-bottom: 45px;
 
-    color: #7a8e95;
+    color: #78847d;
 
     font-size: 13px;
 }
@@ -146,6 +149,8 @@ a {
 .legal-wrapper h2 {
     margin-top: 42px;
     margin-bottom: 13px;
+
+    color: #eef1ec;
 
     font-size: 23px;
     line-height: 1.25;
@@ -156,6 +161,8 @@ a {
 .legal-wrapper h3 {
     margin-top: 26px;
     margin-bottom: 9px;
+
+    color: white;
 
     font-size: 17px;
 }
@@ -188,18 +195,18 @@ a {
 }
 
 .legal-wrapper a {
-    color: #087f7c;
+    color: var(--accent);
 
     font-weight: 650;
 
     text-decoration: underline;
-    text-decoration-color: #20b8b4;
+    text-decoration-color: #75856b;
 
     text-underline-offset: 3px;
 }
 
 .legal-wrapper a:hover {
-    color: #065f5d;
+    color: #d0dac5;
 }
 
 .legal-callout {
@@ -228,9 +235,9 @@ a {
 .legal-footer {
     padding: 32px 0;
 
-    background: var(--dark);
+    background: #080c0a;
 
-    color: #8fa4ab;
+    color: #7f8a83;
 }
 
 .legal-footer-inner {
@@ -247,7 +254,7 @@ a {
 }
 
 .legal-footer a {
-    color: #c3d2d6;
+    color: #adb8b1;
 
     text-decoration: none;
 }
