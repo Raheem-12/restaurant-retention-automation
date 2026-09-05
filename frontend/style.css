@@ -1542,3 +1542,16 @@ a {
     opacity: 0.7;
 }
 
+/* Owner Dashboard Demo Button */
+.button-owner {
+    background: #111714;
+    color: #f2f4ef;
+    border: 1px solid #111714;
+}
+
+.button-owner:hover {
+    background: #202a24;
+    color: #f2f4ef;
+    border-color: #202a24;
+    transform: translateY(-2px);
+}
