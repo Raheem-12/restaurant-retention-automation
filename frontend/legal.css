@@ -1,14 +1,14 @@
 :root {
-    --background: #f3f1e8;
-    --surface: #faf9f4;
-    --sage: #e5eadc;
+    --background: #e7eef1;
+    --surface: #f5f8f9;
+    --sage: #d7e5e8;
 
-    --dark: #101713;
-    --accent: #b7f34a;
+    --dark: #14252e;
+    --accent: #20b8b4;
 
-    --text: #111411;
-    --muted: #5f675f;
-    --border: #d2d8cd;
+    --text: #14232a;
+    --muted: #61737b;
+    --border: #c5d4d9;
 }
 
 * {
@@ -42,9 +42,11 @@ a {
     display: flex;
     align-items: center;
 
-    background: var(--background);
+    background: rgba(231, 238, 241, 0.96);
 
     border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(16px);
 }
 
 .legal-nav-inner {
@@ -112,7 +114,7 @@ a {
 .legal-label {
     margin-bottom: 16px;
 
-    color: #687068;
+    color: #58717a;
 
     font-size: 11px;
     font-weight: 800;
@@ -136,7 +138,7 @@ a {
 .legal-updated {
     margin-bottom: 45px;
 
-    color: #858c84;
+    color: #7a8e95;
 
     font-size: 13px;
 }
@@ -186,18 +188,18 @@ a {
 }
 
 .legal-wrapper a {
-    color: #30451d;
+    color: #087f7c;
 
     font-weight: 650;
 
     text-decoration: underline;
-    text-decoration-color: #9dcc60;
+    text-decoration-color: #20b8b4;
 
     text-underline-offset: 3px;
 }
 
 .legal-wrapper a:hover {
-    color: #111;
+    color: #065f5d;
 }
 
 .legal-callout {
@@ -228,7 +230,7 @@ a {
 
     background: var(--dark);
 
-    color: #929c94;
+    color: #8fa4ab;
 }
 
 .legal-footer-inner {
@@ -245,7 +247,7 @@ a {
 }
 
 .legal-footer a {
-    color: #c3cbc4;
+    color: #c3d2d6;
 
     text-decoration: none;
 }
@@ -279,5 +281,4 @@ a {
     .legal-footer-inner {
         flex-direction: column;
     }
-
 }
