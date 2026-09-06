@@ -1544,16 +1544,14 @@ a {
 
 .contact-email {
     display: block;
-    width: fit-content;
-    margin: 18px auto 0;
+    margin-top: 18px;
     color: var(--muted);
     font-size: 0.95rem;
     text-decoration: none;
-    transition: color 0.2s ease;
+    text-align: center;
 }
 
 .contact-email:hover {
     color: var(--accent);
 }
-
 
