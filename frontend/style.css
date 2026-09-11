@@ -1326,48 +1326,54 @@ footer {
   }
 }
 
-/* Updated DineSurge logo with tagline */
-
+/* Transparent DineSurge logo */
 .brand {
-  width: 238px;
-  height: 68px;
-  overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 238px;
+    height: 68px;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
 }
 
 .brand img {
-  display: block;
-  width: 238px;
-  height: auto;
-  mix-blend-mode: screen;
-  transform: translateY(-5px);
+    display: block;
+    width: 238px;
+    height: auto;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    mix-blend-mode: normal;
 }
 
 footer .brand {
-  width: 270px;
-  height: 78px;
+    width: 270px;
+    height: 78px;
 }
 
 footer .brand img {
-  width: 270px;
+    width: 270px;
 }
 
 @media (max-width: 650px) {
-  .brand {
-    width: 168px;
-    height: 50px;
-  }
+    .brand {
+        width: 168px;
+        height: 50px;
+    }
 
-  .brand img {
-    width: 168px;
-    transform: translateY(-2px);
-  }
+    .brand img {
+        width: 168px;
+    }
 
-  footer .brand {
-    width: 220px;
-    height: 64px;
-  }
+    footer .brand {
+        width: 220px;
+        height: 64px;
+    }
 
-  footer .brand img {
-    width: 220px;
-  }
+    footer .brand img {
+        width: 220px;
+    }
 }
