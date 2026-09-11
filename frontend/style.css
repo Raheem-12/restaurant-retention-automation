@@ -136,23 +136,25 @@ a {
 }
 
 .button-dark {
-  color: #ffffff;
-  background: #0b1116;
+  color: #080c10;
+  background: linear-gradient(135deg, #ffffff, #dce7f1);
+  box-shadow: 0 12px 32px rgba(215, 229, 241, 0.13);
 }
 
 .button-dark:hover {
-  background: #16212a;
+  background: #ffffff;
 }
 
 .button-light-outline {
-  color: #0b1116;
-  border: 1px solid rgba(11, 17, 22, 0.3);
-  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid #526170;
+  background: transparent;
 }
 
 .button-light-outline:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: #0b1116;
+  color: #ffffff;
+  border-color: #d7e2ec;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* Hero */
@@ -356,11 +358,11 @@ a {
   font-size: 0.75rem;
 }
 
-/* Problem description */
+/* Problem section */
 
 .problem {
   padding: 105px 0;
-  background: #121b18;
+  background: #101820;
   border-block: 1px solid var(--line);
 }
 
@@ -380,7 +382,7 @@ a {
 }
 
 .problem-copy {
-  color: #b7c3c0;
+  color: #aab4c0;
   font-size: 1.06rem;
 }
 
@@ -393,18 +395,18 @@ a {
   padding: 26px 28px;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(190, 210, 198, 0.2);
+  border: 1px solid var(--line);
   border-radius: 20px;
-  background: #0a100e;
+  background: #090f15;
 }
 
 .problem-note strong {
-  color: #dce9d3;
+  color: #dce7f1;
   font-size: 1.1rem;
 }
 
 .problem-note span {
-  color: #aab9b4;
+  color: #aab4c0;
 }
 
 /* Six feature boxes */
@@ -442,17 +444,18 @@ a {
   padding: 34px;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: linear-gradient(145deg, #151f1c, #111a17);
+  background: linear-gradient(145deg, #17222c, #10171e);
   transition:
-    transform 0.35s ease,
     border-color 0.35s ease,
     box-shadow 0.35s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-9px);
-  border-color: rgba(220, 231, 241, 0.42);
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.3);
+  border-color: rgba(220, 231, 241, 0.55);
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(181, 204, 224, 0.06);
+  animation: feature-card-shake 0.42s ease-in-out;
 }
 
 .feature-card > span {
@@ -461,8 +464,9 @@ a {
   display: grid;
   place-items: center;
   border-radius: 16px;
-  color: #0b1110;
-  background: #c5d3b8;
+  color: #091016;
+  background: linear-gradient(145deg, #ffffff, #9fb1c2);
+  box-shadow: 0 8px 22px rgba(177, 201, 221, 0.12);
   font-size: 0.8rem;
   font-weight: 800;
 }
@@ -476,6 +480,36 @@ a {
   margin-top: 10px;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+@keyframes feature-card-shake {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  15% {
+    transform: translateY(-7px) rotate(-0.8deg);
+  }
+
+  30% {
+    transform: translateY(-7px) rotate(0.8deg);
+  }
+
+  45% {
+    transform: translateY(-7px) rotate(-0.55deg);
+  }
+
+  60% {
+    transform: translateY(-7px) rotate(0.55deg);
+  }
+
+  75% {
+    transform: translateY(-7px) rotate(-0.25deg);
+  }
+
+  100% {
+    transform: translateY(-7px) rotate(0deg);
+  }
 }
 
 /* How it works */
@@ -527,8 +561,8 @@ a {
   display: grid;
   place-items: center;
   border-radius: 16px;
-  background: #25362f;
-  color: #c8d5b8;
+  background: #243442;
+  color: #dce7f1;
   font-size: 1.5rem;
   font-style: normal;
 }
@@ -547,14 +581,20 @@ a {
 
 .live-demo {
   overflow: hidden;
+  color: #ffffff;
   background:
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(67, 94, 116, 0.25),
+      transparent 32%
+    ),
     linear-gradient(
       130deg,
-      #d5dfca,
-      #b8c8aa 46%,
-      #9caf91
+      #17232d 0%,
+      #101820 48%,
+      #0b1117 100%
     );
-  color: #0a0f0c;
+  border-top: 1px solid var(--line);
 }
 
 .demo-layout {
@@ -570,7 +610,7 @@ a {
 }
 
 .live-demo .eyebrow {
-  color: #314336;
+  color: #b8c7d4;
 }
 
 .live-demo h2 {
@@ -581,7 +621,7 @@ a {
 
 .demo-copy > p:not(.eyebrow):not(.demo-note) {
   max-width: 720px;
-  color: #46564c;
+  color: #b5c0ca;
   font-size: 1.06rem;
 }
 
@@ -595,7 +635,7 @@ a {
 .demo-note {
   max-width: 720px;
   margin-top: 30px;
-  color: #627065;
+  color: #8998a5;
   font-size: 0.92rem;
 }
 
@@ -610,11 +650,13 @@ a {
   width: 370px;
   height: 690px;
   padding: 15px;
-  border: 2px solid #232a26;
+  border: 2px solid #526170;
   border-radius: 68px;
   background: #050807;
-  box-shadow: 0 35px 75px rgba(30, 42, 32, 0.35);
-  animation: floatPhone 5s ease-in-out infinite;
+  box-shadow:
+    0 35px 75px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(146, 177, 202, 0.08);
+  animation: float-phone 5s ease-in-out infinite;
 }
 
 .phone-notch {
@@ -682,13 +724,13 @@ a {
   display: grid;
   place-items: center;
   border-radius: 11px;
-  background: #f1c214;
   color: #111111;
+  background: #f1c214;
   font-size: 0.72rem;
   font-weight: 800;
 }
 
-@keyframes floatPhone {
+@keyframes float-phone {
   0%,
   100% {
     transform: rotate(3deg) translateY(0);
@@ -699,7 +741,7 @@ a {
   }
 }
 
-/* Final CTA and footer */
+/* Final call to action */
 
 .final-cta {
   padding: 65px 0;
@@ -729,6 +771,8 @@ a {
   min-width: 230px;
 }
 
+/* Footer */
+
 footer {
   padding: 35px 0 22px;
   background: #070b0f;
@@ -756,7 +800,7 @@ footer {
   font-size: 0.72rem;
 }
 
-/* Scroll animations */
+/* Scroll reveal animation */
 
 .reveal {
   opacity: 0;
@@ -987,6 +1031,11 @@ footer {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .feature-card:hover {
+    animation: none;
+    transform: none;
   }
 
   .phone {
