@@ -18,6 +18,7 @@ if (demoForm) {
 
       event.preventDefault();
 
+
       if (!demoForm.checkValidity()) {
         demoForm.reportValidity();
         return;
@@ -30,11 +31,13 @@ if (demoForm) {
           .value
           .trim();
 
+
       const phone =
         document
           .getElementById("phone")
           .value
           .trim();
+
 
       const email =
         document
@@ -42,11 +45,13 @@ if (demoForm) {
           .value
           .trim();
 
+
       const restaurant =
         document
           .getElementById("restaurant")
           .value
           .trim();
+
 
       const locations =
         document
