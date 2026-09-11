@@ -43,8 +43,6 @@ a {
   letter-spacing: 0.25em;
 }
 
-/* Header */
-
 .site-header {
   position: absolute;
   inset: 0 0 auto;
@@ -88,8 +86,6 @@ a {
 .footer-links a:hover {
   color: #ffffff;
 }
-
-/* Buttons */
 
 .button {
   min-height: 48px;
@@ -156,8 +152,6 @@ a {
   border-color: #d7e2ec;
   background: rgba(255, 255, 255, 0.06);
 }
-
-/* Hero */
 
 .hero {
   min-height: 690px;
@@ -260,8 +254,6 @@ a {
   color: #c4cbd1;
 }
 
-/* Demo request form */
-
 .demo-form-section {
   position: relative;
   z-index: 3;
@@ -333,8 +325,7 @@ a {
   font-size: 0.68rem;
 }
 
-.form-grid input,
-.form-grid select {
+.form-grid input {
   width: 100%;
   border: 0;
   outline: 0;
@@ -343,12 +334,8 @@ a {
   font: 500 0.92rem "Manrope", sans-serif;
 }
 
-.form-grid select option {
-  color: #111111;
-}
-
 .submit-button {
-  height: 59px;
+  min-height: 59px;
 }
 
 .form-note {
@@ -357,8 +344,6 @@ a {
   color: #89949e;
   font-size: 0.75rem;
 }
-
-/* Problem section */
 
 .problem {
   padding: 105px 0;
@@ -409,8 +394,6 @@ a {
   color: #aab4c0;
 }
 
-/* Six feature boxes */
-
 .features {
   padding: 105px 0;
 }
@@ -446,16 +429,17 @@ a {
   border-radius: 24px;
   background: linear-gradient(145deg, #17222c, #10171e);
   transition:
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .feature-card:hover {
-  border-color: rgba(220, 231, 241, 0.55);
+  transform: translateY(-4px);
+  border-color: rgba(220, 231, 241, 0.36);
   box-shadow:
-    0 24px 55px rgba(0, 0, 0, 0.35),
-    0 0 24px rgba(181, 204, 224, 0.06);
-  animation: feature-card-shake 0.42s ease-in-out;
+    0 16px 38px rgba(0, 0, 0, 0.25),
+    0 0 18px rgba(181, 204, 224, 0.04);
 }
 
 .feature-card > span {
@@ -481,38 +465,6 @@ a {
   color: var(--muted);
   font-size: 0.92rem;
 }
-
-@keyframes feature-card-shake {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  15% {
-    transform: translateY(-7px) rotate(-0.8deg);
-  }
-
-  30% {
-    transform: translateY(-7px) rotate(0.8deg);
-  }
-
-  45% {
-    transform: translateY(-7px) rotate(-0.55deg);
-  }
-
-  60% {
-    transform: translateY(-7px) rotate(0.55deg);
-  }
-
-  75% {
-    transform: translateY(-7px) rotate(-0.25deg);
-  }
-
-  100% {
-    transform: translateY(-7px) rotate(0deg);
-  }
-}
-
-/* How it works */
 
 .how {
   padding: 100px 0;
@@ -576,8 +528,6 @@ a {
   margin-top: 8px;
   color: var(--muted);
 }
-
-/* Customer demo and phone */
 
 .live-demo {
   overflow: hidden;
@@ -741,8 +691,6 @@ a {
   }
 }
 
-/* Final call to action */
-
 .final-cta {
   padding: 65px 0;
   border-block: 1px solid var(--line);
@@ -771,8 +719,6 @@ a {
   min-width: 230px;
 }
 
-/* Footer */
-
 footer {
   padding: 35px 0 22px;
   background: #070b0f;
@@ -799,8 +745,6 @@ footer {
   color: #71808c;
   font-size: 0.72rem;
 }
-
-/* Scroll reveal animation */
 
 .reveal {
   opacity: 0;
@@ -837,8 +781,6 @@ footer {
   transition-delay: 0.25s;
 }
 
-/* Tablet */
-
 @media (max-width: 900px) {
   .desktop-nav {
     display: none;
@@ -864,8 +806,6 @@ footer {
     flex-direction: column;
   }
 }
-
-/* Mobile */
 
 @media (max-width: 650px) {
   .container {
@@ -1020,8 +960,6 @@ footer {
   }
 }
 
-/* Accessibility */
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1034,7 +972,6 @@ footer {
   }
 
   .feature-card:hover {
-    animation: none;
     transform: none;
   }
 

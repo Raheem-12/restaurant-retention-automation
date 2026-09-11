@@ -18,8 +18,10 @@ if (demoForm) {
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
-    const restaurant = document.getElementById("restaurant").value.trim();
-    const locations = document.getElementById("locations").value;
+    const restaurant = document
+      .getElementById("restaurant")
+      .value
+      .trim();
 
     const subject = `DineSurge Demo Request - ${restaurant}`;
 
@@ -30,17 +32,18 @@ if (demoForm) {
       "",
       `Name: ${name}`,
       `Restaurant: ${restaurant}`,
-      `Number of locations: ${locations}`,
       `Phone: ${phone}`,
       `Email: ${email}`,
       "",
       "Thank you."
     ].join("\n");
 
-    window.location.href =
-      `mailto:dinesurge@gmail.com` +
+    const emailUrl =
+      "mailto:dinesurge@gmail.com" +
       `?subject=${encodeURIComponent(subject)}` +
       `&body=${encodeURIComponent(body)}`;
+
+    window.location.href = emailUrl;
   });
 }
 
