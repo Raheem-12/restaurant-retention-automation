@@ -1562,3 +1562,179 @@ footer {
 .brand img {
   filter: sepia(0.24) saturate(0.78) brightness(1.08) contrast(0.98);
 }
+
+/* =========================================================
+   FINAL HERO SPACING, LIGHTING AND DEMO-LINK FIXES
+   Paste this at the very bottom of style.css
+   ========================================================= */
+
+/*
+The main dashboard preview is no longer one large link.
+Only the clearly labeled Open Owner Demo button is clickable.
+*/
+
+.dashboard-preview {
+    cursor: default;
+}
+
+/* Keep the actual owner-dashboard button clickable. */
+
+.dashboard-link {
+    cursor: pointer;
+}
+
+/*
+Add larger side gutters and make the hero proportions more
+compact like the reference image.
+*/
+
+@media (min-width: 901px) {
+    .container {
+        width: min(calc(100% - 150px), 1540px);
+    }
+
+    .hero,
+    .hero-content {
+        min-height: 690px;
+    }
+
+    .hero-content {
+        padding-top: 105px;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 54px;
+    }
+
+    .hero-copy {
+        max-width: 580px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 4.15vw, 4.4rem);
+    }
+
+    .lead {
+        max-width: 560px;
+    }
+
+    .dashboard-body {
+        height: 385px;
+    }
+
+    .dashboard-main {
+        padding: 30px 28px;
+    }
+
+    .dashboard-stats {
+        margin-top: 22px;
+    }
+
+    .dashboard-stats > div {
+        padding: 16px;
+    }
+}
+
+/*
+Warm restaurant-lighting image with enough darkness behind
+the headline and dashboard for readability.
+*/
+
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 10, 8, 0.91) 0%,
+            rgba(18, 14, 11, 0.78) 42%,
+            rgba(16, 12, 9, 0.66) 100%
+        ),
+        url("/warm-restaurant-lighting.png?v=2")
+            center center / cover no-repeat;
+}
+
+/* Bottom transition from the image into the page background. */
+
+.hero::after {
+    background: linear-gradient(
+        transparent,
+        #15120f
+    );
+}
+
+/*
+Soft light coming diagonally through the center, matching the
+slightly blurred diagonal area in the target reference.
+*/
+
+.hero-shade::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -22%;
+    left: 43%;
+    width: 22%;
+    height: 145%;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 221, 166, 0.12),
+            rgba(255, 238, 202, 0.07),
+            transparent
+        );
+    filter: blur(32px);
+    transform: rotate(18deg);
+    transform-origin: center;
+}
+
+/* Prevent the footer logo from becoming oversized. */
+
+footer .brand {
+    flex: 0 0 auto;
+    width: 178px !important;
+    max-width: 178px !important;
+    height: 52px;
+    overflow: visible;
+}
+
+footer .brand img {
+    display: block;
+    width: 178px !important;
+    max-width: 178px !important;
+    height: auto !important;
+    object-fit: contain;
+}
+
+/* Tablet adjustments */
+
+@media (max-width: 900px) {
+    .hero-shade::after {
+        left: 48%;
+        width: 35%;
+        opacity: 0.65;
+    }
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 650px) {
+    .hero {
+        background:
+            linear-gradient(
+                rgba(13, 10, 8, 0.88),
+                rgba(18, 14, 11, 0.81)
+            ),
+            url("/warm-restaurant-lighting.png?v=2")
+                60% center / cover no-repeat;
+    }
+
+    footer .brand {
+        width: 150px !important;
+        max-width: 150px !important;
+        height: 44px;
+    }
+
+    footer .brand img {
+        width: 150px !important;
+        max-width: 150px !important;
+    }
+}
