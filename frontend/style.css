@@ -1350,12 +1350,17 @@ footer {
 }
 
 footer .brand {
-    width: 270px;
-    height: 78px;
+    flex: 0 0 auto;
+    width: 178px;
+    height: 52px;
+    max-width: 178px;
 }
 
 footer .brand img {
-    width: 270px;
+    display: block;
+    width: 178px !important;
+    max-width: 178px !important;
+    height: auto !important;
 }
 
 @media (max-width: 650px) {
@@ -1369,11 +1374,191 @@ footer .brand img {
     }
 
     footer .brand {
-        width: 220px;
-        height: 64px;
+        width: 150px;
+        height: 44px;
+        max-width: 150px;
     }
 
     footer .brand img {
-        width: 220px;
+        width: 150px !important;
+        max-width: 150px !important;
     }
+}
+
+/* =========================================================
+   WARM CHARCOAL + CREAM THEME
+   These color overrides do not change any existing animation.
+   ========================================================= */
+:root {
+  --bg: #15120f;
+  --surface: #25201b;
+  --text: #fff9ef;
+  --muted: #c8bbab;
+  --line: rgba(239, 211, 154, 0.19);
+}
+
+body {
+  background: #15120f;
+  color: var(--text);
+}
+
+.site-header {
+  background: rgba(21, 18, 15, 0.72);
+  border-bottom-color: rgba(239, 211, 154, 0.14);
+}
+
+.desktop-nav a,
+.footer-links a { color: #d1c5b6; }
+.desktop-nav a:hover,
+.footer-links a:hover { color: #fff9ef; }
+.eyebrow { color: #e7c989; }
+
+.button-white {
+  color: #211b15;
+  background: linear-gradient(135deg, #fff0c9, #e6bd73);
+  box-shadow: 0 12px 34px rgba(221, 161, 72, 0.18);
+}
+
+.button-white:hover {
+  background: linear-gradient(135deg, #fff6df, #efca87);
+  box-shadow: 0 16px 40px rgba(221, 161, 72, 0.25);
+}
+
+.button-outline {
+  color: #fff5e8;
+  border-color: rgba(239, 211, 154, 0.36);
+  background: rgba(20, 16, 13, 0.42);
+}
+
+.button-outline:hover {
+  border-color: #edcf92;
+  background: rgba(239, 211, 154, 0.09);
+}
+
+.button-dark { color: #fff7eb; background: #211b17; }
+
+.button-light-outline {
+  color: #241c15;
+  border-color: rgba(51, 38, 26, 0.38);
+  background: rgba(255, 248, 232, 0.18);
+}
+
+.hero {
+  background:
+    linear-gradient(90deg, rgba(13, 10, 8, 0.9) 0%, rgba(18, 14, 11, 0.76) 42%, rgba(16, 12, 9, 0.66) 100%),
+    url("/warm-restaurant-lighting.png?v=1") center center / cover no-repeat;
+}
+
+.hero::after {
+  background: linear-gradient(transparent, #15120f);
+}
+
+.hero-shade {
+  background:
+    radial-gradient(circle at 35% 31%, rgba(194, 133, 57, 0.13), transparent 36%),
+    linear-gradient(90deg, rgba(10, 8, 6, 0.18), transparent 48%);
+}
+
+.lead { color: #dfd3c4; }
+.quick-benefits small { color: #c9bcad; }
+
+.dashboard-preview {
+  border-color: rgba(239, 211, 154, 0.25);
+  background: #1b1815;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.52), 0 0 48px rgba(222, 161, 74, 0.08);
+}
+
+.dashboard-preview:hover { border-color: rgba(247, 220, 164, 0.52); }
+.browser-bar { background: #2a241f; border-bottom-color: rgba(239, 211, 154, 0.15); }
+.browser-dots i { background: #75685a; }
+.browser-bar > span { color: #b7a692; background: #352e27; }
+.dashboard-body aside { background: #100e0c; }
+.dashboard-body aside i { background: #4a4036; }
+.dashboard-body aside i:first-of-type { background: #e8c77f; }
+.dashboard-main { background: #1b1815; }
+.dashboard-topline small,
+.dashboard-stats span,
+.dashboard-stats small { color: #ae9b85; }
+.dashboard-topline > b,
+.activity-row > b { color: #221a12; background: #e3bd74; }
+.dashboard-stats > div,
+.activity-panel { border-color: rgba(239, 211, 154, 0.16); background: #28231e; }
+.activity-row { border-bottom-color: rgba(239, 211, 154, 0.09); }
+.activity-row div small,
+.activity-row time,
+.activity-heading span { color: #9e8d79; }
+.dashboard-link { color: #231b13; background: linear-gradient(135deg, #fff0c8, #dca75b); }
+
+.demo-card {
+  border-color: rgba(239, 211, 154, 0.2);
+  background: linear-gradient(145deg, rgba(43, 36, 30, 0.98), rgba(22, 18, 15, 0.99));
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.44);
+}
+
+.form-heading > p:last-child,
+.feature-heading > p,
+.section-heading > p:last-child,
+.feature-card p,
+.step-card p { color: #c8bbab; }
+.form-grid label { border-color: rgba(239, 211, 154, 0.18); background: rgba(255, 244, 219, 0.04); }
+.form-grid label span { color: #bbaa97; }
+.form-grid input,
+.form-grid select { color: #fff9ef; }
+
+.problem,
+.how {
+  background: #1d1916;
+  border-color: rgba(239, 211, 154, 0.12);
+}
+
+.problem-copy { color: #c9bcad; }
+.problem-note { border-color: rgba(239, 211, 154, 0.18); background: #15120f; }
+.problem-note strong { color: #f0d7a5; }
+.problem-note span { color: #bbaa97; }
+
+.features { background: #15120f; }
+
+.feature-card,
+.step-card {
+  border-color: rgba(239, 211, 154, 0.16);
+  background: linear-gradient(145deg, #2b251f, #1e1a16);
+}
+
+.feature-card:hover,
+.step-card:hover {
+  border-color: rgba(247, 220, 164, 0.4);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+}
+
+.feature-card > span,
+.step-icon {
+  color: #241b13;
+  background: linear-gradient(145deg, #ffe9b8, #d9aa60);
+}
+
+.live-demo {
+  color: #241d17;
+  background: linear-gradient(135deg, #eadfc9, #cbbb9f);
+}
+
+.live-demo .eyebrow { color: #624b2d; }
+.live-demo > p,
+.demo-copy > p { color: #625748; }
+.phone { background: #181411; box-shadow: 0 30px 70px rgba(25, 18, 12, 0.38); }
+.phone-screen { background: #211c18; }
+
+.final-cta {
+  background: linear-gradient(90deg, #28211b, #17130f);
+  border-color: rgba(239, 211, 154, 0.17);
+}
+
+footer {
+  background: #100d0b;
+  border-top-color: rgba(239, 211, 154, 0.12);
+}
+
+.copyright { color: #958778; }
+
+.brand img {
+  filter: sepia(0.24) saturate(0.78) brightness(1.08) contrast(0.98);
 }
