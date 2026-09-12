@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="DineSurge helps restaurants turn first-time diners into repeat customers with guest capture, automated offers, and retention tracking."
+        content="DineSurge helps restaurants capture customer information, send automated offers, and turn first-time diners into regulars."
     >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
         <div class="container nav-container">
             <a href="/" class="brand" aria-label="DineSurge home">
                 <img
-                    src="/dinesurge-logo-transparent.png"
+                    src="/dinesurge-logo-coral.png"
                     alt="DineSurge"
                     class="brand-logo"
                 >
@@ -42,15 +42,15 @@
             </nav>
 
             <a href="#contact" class="button button-primary nav-button">
-                Book a Demo →
+                Book a Demo
+                <span class="button-arrow" aria-hidden="true"></span>
             </a>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-glow hero-glow-one"></div>
-            <div class="hero-glow hero-glow-two"></div>
+            <div class="hero-glow"></div>
 
             <div class="container hero-grid">
                 <div class="hero-copy">
@@ -72,18 +72,20 @@
 
                     <div class="hero-actions">
                         <a href="#contact" class="button button-primary">
-                            Book a Demo →
+                            Book a Demo
+                            <span class="button-arrow" aria-hidden="true"></span>
                         </a>
 
                         <a href="#demo" class="button button-outline">
-                            <span class="play-icon">▶</span>
-                            View Live Demo →
+                            <span class="play-icon" aria-hidden="true"></span>
+                            View Live Demo
                         </a>
                     </div>
 
                     <div class="hero-benefits">
                         <div class="hero-benefit">
-                            <span class="benefit-icon">↗</span>
+                            <span class="benefit-icon benefit-chart" aria-hidden="true"></span>
+
                             <div>
                                 <strong>Trackable</strong>
                                 <small>Repeat visits</small>
@@ -91,7 +93,8 @@
                         </div>
 
                         <div class="hero-benefit">
-                            <span class="benefit-icon">●</span>
+                            <span class="benefit-icon benefit-person" aria-hidden="true"></span>
+
                             <div>
                                 <strong>Opted-in</strong>
                                 <small>Customer list</small>
@@ -99,7 +102,8 @@
                         </div>
 
                         <div class="hero-benefit">
-                            <span class="benefit-icon">⚙</span>
+                            <span class="benefit-icon benefit-sliders" aria-hidden="true"></span>
+
                             <div>
                                 <strong>Simple</strong>
                                 <small>Managed setup</small>
@@ -125,17 +129,17 @@
                         <div class="dashboard-preview">
                             <aside class="preview-sidebar" aria-hidden="true">
                                 <div class="preview-logo">D</div>
-                                <div class="side-line active"></div>
-                                <div class="side-line"></div>
-                                <div class="side-line"></div>
-                                <div class="side-line short"></div>
+                                <span class="side-line active"></span>
+                                <span class="side-line"></span>
+                                <span class="side-line"></span>
+                                <span class="side-line short"></span>
                             </aside>
 
                             <div class="preview-content">
                                 <div class="preview-header">
                                     <div>
                                         <small>DEMO DATA</small>
-                                        <h3>Guest Retention</h3>
+                                        <h2>Guest Retention</h2>
                                     </div>
 
                                     <span class="status-badge">
@@ -170,37 +174,43 @@
                                     </div>
 
                                     <div class="activity-row">
-                                        <div class="activity-icon">+</div>
+                                        <span class="activity-dot"></span>
+
                                         <div>
                                             <strong>New VIP signup</strong>
                                             <small>Customer joined the guest list</small>
                                         </div>
-                                        <span>2m ago</span>
+
+                                        <time>2m ago</time>
                                     </div>
 
                                     <div class="activity-row">
-                                        <div class="activity-icon">✓</div>
+                                        <span class="activity-dot"></span>
+
                                         <div>
                                             <strong>Offer redeemed</strong>
                                             <small>VIP offer used in-store</small>
                                         </div>
-                                        <span>14m ago</span>
+
+                                        <time>14m ago</time>
                                     </div>
 
                                     <div class="activity-row">
-                                        <div class="activity-icon">↗</div>
+                                        <span class="activity-dot"></span>
+
                                         <div>
                                             <strong>Return visit</strong>
                                             <small>Repeat customer recorded</small>
                                         </div>
-                                        <span>1h ago</span>
+
+                                        <time>1h ago</time>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="floating-card" aria-hidden="true">
+                    <div class="floating-card">
                         <span>TRACK RESULTS</span>
                         <strong>24/7</strong>
                         <small>Signups and redemptions</small>
@@ -209,7 +219,7 @@
             </div>
         </section>
 
-        <section class="journey-strip">
+        <section class="journey-strip" aria-label="DineSurge process">
             <div class="container journey-content">
                 <span>CAPTURE</span>
                 <span>ENGAGE</span>
@@ -219,39 +229,42 @@
             </div>
         </section>
 
-        <section class="restaurant-section">
-            <div class="container restaurant-card">
-                <div class="restaurant-image-wrap">
+        <section class="product-section">
+            <div class="container product-card">
+                <div class="product-image-wrap">
                     <img
-                        src="/warm-restaurant-lighting.png"
-                        alt="Warm restaurant dining room"
-                        class="restaurant-image"
+                        src="/dinesurge-product-demo.png"
+                        alt="DineSurge customer signup and restaurant owner dashboard"
+                        class="product-image"
                     >
                 </div>
 
-                <div class="restaurant-copy">
+                <div class="product-copy">
                     <div class="section-label">
-                        BUILT FOR REAL RESTAURANTS
+                        ONE SYSTEM. BOTH SIDES.
                     </div>
 
                     <h2>
-                        Retention that works around your restaurant.
+                        Simple for guests.<br>
+                        Useful for owners.
                     </h2>
 
                     <p>
-                        DineSurge makes it easy to turn one-time customers into
-                        regulars without adding more work for your staff.
+                        Customers get a quick way to join your VIP list while
+                        you get the information and tracking needed to bring
+                        them back.
                     </p>
 
-                    <ul class="restaurant-list">
-                        <li>Increase repeat visits</li>
-                        <li>Build an opted-in customer list</li>
-                        <li>Send targeted offers automatically</li>
-                        <li>Track signups and redemptions</li>
+                    <ul class="check-list">
+                        <li>Fast customer signup</li>
+                        <li>Automated return offers</li>
+                        <li>Tracked offer redemptions</li>
+                        <li>Clear owner dashboard</li>
                     </ul>
 
-                    <a href="#how-it-works" class="button button-dark">
-                        See How It Works →
+                    <a href="#demo" class="button button-primary">
+                        See Both Experiences
+                        <span class="button-arrow" aria-hidden="true"></span>
                     </a>
                 </div>
             </div>
@@ -287,9 +300,9 @@
             </div>
         </section>
 
-        <section class="outcome-section">
+        <section class="system-section">
             <div class="container">
-                <div class="section-heading split-heading">
+                <div class="split-heading">
                     <div>
                         <div class="section-label">THE SYSTEM</div>
                         <h2>Your repeat-customer engine.</h2>
@@ -302,30 +315,36 @@
                 </div>
 
                 <div class="three-card-grid">
-                    <article class="content-card">
+                    <article class="info-card">
                         <span class="card-number">01</span>
-                        <div class="card-icon">+</div>
+                        <span class="card-mark" aria-hidden="true"></span>
+
                         <h3>Capture guests</h3>
+
                         <p>
                             Give customers a simple way to join your VIP list
                             while they are already engaged with your restaurant.
                         </p>
                     </article>
 
-                    <article class="content-card">
+                    <article class="info-card">
                         <span class="card-number">02</span>
-                        <div class="card-icon">↗</div>
+                        <span class="card-mark" aria-hidden="true"></span>
+
                         <h3>Bring them back</h3>
+
                         <p>
                             Automatically deliver restaurant-approved offers
                             designed to create another visit.
                         </p>
                     </article>
 
-                    <article class="content-card">
+                    <article class="info-card">
                         <span class="card-number">03</span>
-                        <div class="card-icon">✓</div>
+                        <span class="card-mark" aria-hidden="true"></span>
+
                         <h3>Measure results</h3>
+
                         <p>
                             Track signups and redemptions so you can see how
                             your retention system is performing.
@@ -337,9 +356,11 @@
 
         <section class="how-section" id="how-it-works">
             <div class="container">
-                <div class="section-heading center-heading">
+                <div class="center-heading">
                     <div class="section-label">HOW IT WORKS</div>
+
                     <h2>From first visit to next visit.</h2>
+
                     <p>
                         A simple customer experience backed by an automated
                         retention system.
@@ -347,32 +368,38 @@
                 </div>
 
                 <div class="three-card-grid">
-                    <article class="content-card">
+                    <article class="info-card">
                         <span class="card-number">01</span>
-                        <div class="card-icon">↗</div>
+                        <span class="card-mark" aria-hidden="true"></span>
+
                         <h3>Customer joins</h3>
+
                         <p>
-                            Guests scan your restaurant's QR code and join your
-                            VIP list in seconds.
+                            Guests scan your restaurant's signup code and join
+                            your VIP list in seconds.
                         </p>
                     </article>
 
-                    <article class="content-card">
+                    <article class="info-card">
                         <span class="card-number">02</span>
-                        <div class="card-icon">✉</div>
+                        <span class="card-mark" aria-hidden="true"></span>
+
                         <h3>Offer delivered</h3>
+
                         <p>
                             DineSurge automatically sends a unique,
                             restaurant-approved offer.
                         </p>
                     </article>
 
-                    <article class="content-card">
+                    <article class="info-card">
                         <span class="card-number">03</span>
-                        <div class="card-icon">✓</div>
+                        <span class="card-mark" aria-hidden="true"></span>
+
                         <h3>Guest returns</h3>
+
                         <p>
-                            Staff redeem the offer and the repeat visit is
+                            Staff redeem the offer and the return visit is
                             recorded automatically.
                         </p>
                     </article>
@@ -382,23 +409,28 @@
 
         <section class="features-section" id="features">
             <div class="container">
-                <div class="section-heading split-heading">
+                <div class="split-heading">
                     <div>
                         <div class="section-label">FEATURES</div>
-                        <h2>Everything needed to bring guests back.</h2>
+
+                        <h2>
+                            Everything needed to bring guests back.
+                        </h2>
                     </div>
 
                     <p>
                         Simple retention tools without another complicated
-                        system for your team to manage.
+                        system for your restaurant to manage.
                     </p>
                 </div>
 
                 <div class="features-grid">
                     <article class="feature-card">
                         <span class="card-number">01</span>
-                        <div class="feature-icon">+</div>
+                        <span class="feature-mark" aria-hidden="true"></span>
+
                         <h3>VIP customer capture</h3>
+
                         <p>
                             Build an opted-in customer list directly from
                             restaurant visits.
@@ -407,8 +439,10 @@
 
                     <article class="feature-card">
                         <span class="card-number">02</span>
-                        <div class="feature-icon">✉</div>
+                        <span class="feature-mark" aria-hidden="true"></span>
+
                         <h3>Automated offers</h3>
+
                         <p>
                             Deliver unique offers without manually contacting
                             every customer.
@@ -417,8 +451,10 @@
 
                     <article class="feature-card">
                         <span class="card-number">03</span>
-                        <div class="feature-icon">⌁</div>
-                        <h3>QR redemption</h3>
+                        <span class="feature-mark" aria-hidden="true"></span>
+
+                        <h3>Secure redemption</h3>
+
                         <p>
                             Give staff a fast way to validate and redeem
                             customer offers.
@@ -427,8 +463,10 @@
 
                     <article class="feature-card">
                         <span class="card-number">04</span>
-                        <div class="feature-icon">↗</div>
+                        <span class="feature-mark" aria-hidden="true"></span>
+
                         <h3>Return-visit tracking</h3>
+
                         <p>
                             See which offers successfully bring customers back.
                         </p>
@@ -436,8 +474,10 @@
 
                     <article class="feature-card">
                         <span class="card-number">05</span>
-                        <div class="feature-icon">▥</div>
+                        <span class="feature-mark" aria-hidden="true"></span>
+
                         <h3>Owner dashboard</h3>
+
                         <p>
                             Monitor signups, redemptions, and customer activity
                             from one place.
@@ -446,11 +486,13 @@
 
                     <article class="feature-card">
                         <span class="card-number">06</span>
-                        <div class="feature-icon">⚙</div>
+                        <span class="feature-mark" aria-hidden="true"></span>
+
                         <h3>Fully managed</h3>
+
                         <p>
                             DineSurge handles the technology while your team
-                            focuses on customers.
+                            focuses on serving customers.
                         </p>
                     </article>
                 </div>
@@ -472,17 +514,19 @@
                     </p>
 
                     <div class="demo-actions">
-                        <a href="/supollo/" class="button button-dark">
-                            View Customer Demo →
+                        <a href="/supollo/" class="button button-primary">
+                            View Customer Demo
+                            <span class="button-arrow" aria-hidden="true"></span>
                         </a>
 
                         <a
                             href="https://dashboard.dinesurge.com/"
-                            class="button button-secondary"
+                            class="button button-outline"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            See What the Owner Sees →
+                            See What the Owner Sees
+                            <span class="button-arrow" aria-hidden="true"></span>
                         </a>
                     </div>
 
@@ -516,107 +560,111 @@
             </div>
         </section>
 
-        <section class="owner-form-section" id="contact">
-            <div class="container">
-                <div class="owner-form-layout">
-                    <div class="owner-form-copy">
-                        <div class="section-label">BOOK A DEMO</div>
+        <section class="contact-section" id="contact">
+            <div class="container contact-layout">
+                <div class="contact-copy">
+                    <div class="section-label">BOOK A DEMO</div>
 
-                        <h2>
-                            Bring more guests back.
-                            <span>Automatically.</span>
-                        </h2>
+                    <h2>
+                        Bring more guests back.
+                        <span>Automatically.</span>
+                    </h2>
 
-                        <p>
-                            Tell us about your restaurant and we’ll show you
-                            how DineSurge can help turn first-time diners into
-                            regular customers.
-                        </p>
+                    <p>
+                        Tell us about your restaurant and we’ll show you how
+                        DineSurge can help turn first-time diners into regular
+                        customers.
+                    </p>
 
-                        <div class="form-benefits">
-                            <span>✓ No obligation</span>
-                            <span>✓ Personalized demonstration</span>
-                            <span>✓ Built for independent restaurants</span>
-                        </div>
-
-                        <a
-                            href="mailto:dinesurge@gmail.com"
-                            class="direct-email"
-                        >
-                            dinesurge@gmail.com
-                        </a>
+                    <div class="contact-benefits">
+                        <span>No obligation</span>
+                        <span>Personalized demonstration</span>
+                        <span>Built for independent restaurants</span>
                     </div>
 
-                    <form class="owner-form" id="owner-demo-form">
-                        <div class="form-heading">
-                            <h3>Request Your Demo</h3>
-                            <p>
-                                Enter your information and we’ll contact you
-                                directly.
-                            </p>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="owner-name">Your name</label>
-                            <input
-                                id="owner-name"
-                                name="name"
-                                type="text"
-                                autocomplete="name"
-                                placeholder="Your full name"
-                                required
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="owner-phone">Phone number</label>
-                            <input
-                                id="owner-phone"
-                                name="phone"
-                                type="tel"
-                                autocomplete="tel"
-                                placeholder="(555) 555-5555"
-                                required
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="owner-email">Email address</label>
-                            <input
-                                id="owner-email"
-                                name="email"
-                                type="email"
-                                autocomplete="email"
-                                placeholder="you@restaurant.com"
-                                required
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="restaurant-name">Restaurant name</label>
-                            <input
-                                id="restaurant-name"
-                                name="restaurant"
-                                type="text"
-                                autocomplete="organization"
-                                placeholder="Your restaurant"
-                                required
-                            >
-                        </div>
-
-                        <button
-                            type="submit"
-                            class="button button-primary form-submit"
-                        >
-                            Request My Demo →
-                        </button>
-
-                        <p class="form-disclaimer">
-                            No spam. Your information is only used to contact
-                            you about DineSurge.
-                        </p>
-                    </form>
+                    <a
+                        href="mailto:dinesurge@gmail.com"
+                        class="direct-email"
+                    >
+                        dinesurge@gmail.com
+                    </a>
                 </div>
+
+                <form class="demo-form" id="owner-demo-form">
+                    <div class="form-heading">
+                        <h3>Request Your Demo</h3>
+
+                        <p>
+                            Enter your information and we’ll contact you
+                            directly.
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="owner-name">Your name</label>
+
+                        <input
+                            id="owner-name"
+                            name="name"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="Your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="owner-phone">Phone number</label>
+
+                        <input
+                            id="owner-phone"
+                            name="phone"
+                            type="tel"
+                            autocomplete="tel"
+                            placeholder="(555) 555-5555"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="owner-email">Email address</label>
+
+                        <input
+                            id="owner-email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="you@restaurant.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restaurant-name">Restaurant name</label>
+
+                        <input
+                            id="restaurant-name"
+                            name="restaurant"
+                            type="text"
+                            autocomplete="organization"
+                            placeholder="Your restaurant"
+                            required
+                        >
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="button button-primary form-submit"
+                    >
+                        Request My Demo
+                        <span class="button-arrow" aria-hidden="true"></span>
+                    </button>
+
+                    <p class="form-disclaimer">
+                        No spam. Your information is only used to contact you
+                        about DineSurge.
+                    </p>
+                </form>
             </div>
         </section>
     </main>
@@ -625,7 +673,7 @@
         <div class="container footer-content">
             <a href="/" class="footer-brand" aria-label="DineSurge home">
                 <img
-                    src="/dinesurge-logo-transparent.png"
+                    src="/dinesurge-logo-coral.png"
                     alt="DineSurge"
                     class="footer-logo"
                 >
@@ -654,15 +702,21 @@
             yearElement.textContent = new Date().getFullYear();
         }
 
-        const ownerDemoForm = document.getElementById("owner-demo-form");
+        const demoForm = document.getElementById("owner-demo-form");
 
-        if (ownerDemoForm) {
-            ownerDemoForm.addEventListener("submit", function (event) {
+        if (demoForm) {
+            demoForm.addEventListener("submit", function (event) {
                 event.preventDefault();
 
-                const name = document.getElementById("owner-name").value.trim();
-                const phone = document.getElementById("owner-phone").value.trim();
-                const email = document.getElementById("owner-email").value.trim();
+                const name =
+                    document.getElementById("owner-name").value.trim();
+
+                const phone =
+                    document.getElementById("owner-phone").value.trim();
+
+                const email =
+                    document.getElementById("owner-email").value.trim();
+
                 const restaurant =
                     document.getElementById("restaurant-name").value.trim();
 
