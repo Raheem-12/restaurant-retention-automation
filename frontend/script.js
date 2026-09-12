@@ -24,3 +24,22 @@ if (phoneInput) {
         phoneInput.value = formattedNumber;
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const phoneInput = document.getElementById("phone");
+
+    if (!phoneInput) return;
+
+    phoneInput.addEventListener("input", function () {
+        const digits = this.value.replace(/\D/g, "").slice(0, 10);
+
+        if (digits.length <= 3) {
+            this.value = digits ? `(${digits}` : "";
+        } else if (digits.length <= 6) {
+            this.value = `(${digits.slice(0, 3)})-${digits.slice(3)}`;
+        } else {
+            this.value =
+                `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(6)}`;
+        }
+    });
+});
