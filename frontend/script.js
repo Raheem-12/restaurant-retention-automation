@@ -1,58 +1,15 @@
-const yearElement = document.getElementById("year");
+const year = document.getElementById("year");
 
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
 
-const demoForm = document.getElementById("demo-form");
-
-if (demoForm) {
-  demoForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    if (!demoForm.checkValidity()) {
-      demoForm.reportValidity();
-      return;
-    }
-
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const restaurant = document
-      .getElementById("restaurant")
-      .value
-      .trim();
-
-    const subject = `DineSurge Demo Request - ${restaurant}`;
-
-    const body = [
-      "Hi DineSurge,",
-      "",
-      "I'd like to schedule a free demo.",
-      "",
-      `Name: ${name}`,
-      `Restaurant: ${restaurant}`,
-      `Phone: ${phone}`,
-      `Email: ${email}`,
-      "",
-      "Thank you."
-    ].join("\n");
-
-    const emailUrl =
-      "mailto:dinesurge@gmail.com" +
-      `?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(body)}`;
-
-    window.location.href = emailUrl;
-  });
-}
-
-const revealItems = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
-    function (entries, observer) {
-      entries.forEach(function (entry) {
+    (entries, observer) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
           observer.unobserve(entry.target);
@@ -61,15 +18,15 @@ if ("IntersectionObserver" in window) {
     },
     {
       threshold: 0.14,
-      rootMargin: "0px 0px -45px"
+      rootMargin: "0px 0px -35px 0px"
     }
   );
 
-  revealItems.forEach(function (item) {
-    revealObserver.observe(item);
+  revealElements.forEach((element) => {
+    revealObserver.observe(element);
   });
 } else {
-  revealItems.forEach(function (item) {
-    item.classList.add("is-visible");
+  revealElements.forEach((element) => {
+    element.classList.add("is-visible");
   });
 }
