@@ -1,45 +1,29 @@
-document.getElementById("year").textContent = new Date().getFullYear();
-
-//Phone section
-const phoneInput = document.getElementById("phone");
-
-if (phoneInput) {
-    phoneInput.addEventListener("input", function () {
-        const digits = phoneInput.value.replace(/\D/g, "").slice(0, 10);
-
-        let formattedNumber = "";
-
-        if (digits.length > 0) {
-            formattedNumber = `(${digits.slice(0, 3)}`;
-        }
-
-        if (digits.length >= 4) {
-            formattedNumber += `)-${digits.slice(3, 6)}`;
-        }
-
-        if (digits.length >= 7) {
-            formattedNumber += `-${digits.slice(6, 10)}`;
-        }
-
-        phoneInput.value = formattedNumber;
-    });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
+    // Update copyright year if a #year element exists
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    // Format phone number as (703)-404-2310
     const phoneInput = document.getElementById("phone");
 
-    if (!phoneInput) return;
+    if (phoneInput) {
+        phoneInput.addEventListener("input", function () {
+            const digits = this.value.replace(/\D/g, "").slice(0, 10);
 
-    phoneInput.addEventListener("input", function () {
-        const digits = this.value.replace(/\D/g, "").slice(0, 10);
-
-        if (digits.length <= 3) {
-            this.value = digits ? `(${digits}` : "";
-        } else if (digits.length <= 6) {
-            this.value = `(${digits.slice(0, 3)})-${digits.slice(3)}`;
-        } else {
-            this.value =
-                `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(6)}`;
-        }
-    });
+            if (digits.length === 0) {
+                this.value = "";
+            } else if (digits.length <= 3) {
+                this.value = `(${digits}`;
+            } else if (digits.length <= 6) {
+                this.value =
+                    `(${digits.slice(0, 3)})-${digits.slice(3)}`;
+            } else {
+                this.value =
+                    `(${digits.slice(0, 3)})-${digits.slice(3, 6)}-${digits.slice(6)}`;
+            }
+        });
+    }
 });
