@@ -3496,3 +3496,150 @@ body::after {
 .dashboard-link:hover {
     transform: translateY(-5px);
 }
+
+/* =========================================================
+   PRODUCT IMAGE SIZE FIX
+   Paste at the very bottom of style.css
+   ========================================================= */
+
+/* HERO: phone and laptop image */
+.hero-card {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.hero-device-visual {
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(24px, 4vw, 60px);
+    background: #030404;
+}
+
+.hero-device-image {
+    display: block;
+    width: 100% !important;
+    max-width: 850px !important;
+    height: auto !important;
+    max-height: 650px !important;
+    object-fit: contain !important;
+    object-position: center;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: translateZ(0);
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.hero-device-visual:hover .hero-device-image {
+    transform: translateY(-5px) scale(1.01);
+    filter: brightness(1.04) !important;
+}
+
+
+/* BUILT FOR REAL RESTAURANTS SECTION */
+.restaurant-panel {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.restaurant-photo.restaurant-product-visual {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 580px;
+    max-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: clamp(22px, 3vw, 46px);
+    background: #030404 !important;
+}
+
+.restaurant-product-image {
+    display: block;
+    width: 100% !important;
+    max-width: 760px !important;
+    height: 100% !important;
+    max-height: 590px !important;
+    object-fit: contain !important;
+    object-position: center;
+    filter: none !important;
+    opacity: 1 !important;
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.restaurant-product-visual:hover .restaurant-product-image {
+    transform: scale(1.015);
+    filter: brightness(1.04) !important;
+}
+
+.restaurant-copy {
+    min-width: 0;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* TABLET */
+@media (max-width: 1100px) {
+    .hero-card {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .hero-device-visual {
+        padding: 24px;
+    }
+
+    .restaurant-photo.restaurant-product-visual {
+        min-height: 500px;
+        padding: 24px;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 800px) {
+    .hero-card,
+    .restaurant-panel {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero-device-visual {
+        width: 100%;
+        min-height: 340px;
+        padding: 24px 14px;
+    }
+
+    .hero-device-image {
+        width: 100% !important;
+        max-width: 650px !important;
+        max-height: 430px !important;
+    }
+
+    .restaurant-photo.restaurant-product-visual {
+        width: 100%;
+        min-height: 360px;
+        max-height: 500px;
+        padding: 22px 14px;
+    }
+
+    .restaurant-product-image {
+        width: 100% !important;
+        max-width: 620px !important;
+        max-height: 450px !important;
+    }
+
+    .restaurant-copy {
+        width: 100%;
+    }
+}
